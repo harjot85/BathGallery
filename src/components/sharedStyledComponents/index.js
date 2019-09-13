@@ -14,8 +14,8 @@ export const InformationBar = styled.div`
 export const ProductCard = styled.div`
   height: ${props => props.height || "25rem"};
   width: ${props => props.width || "100%"};
-  border: 1px solid grey;
-  border-radius: 0.1rem;
+  border: 2px solid #F1F1F1;
+  border-radius: 0.2rem;
   margin: 0 auto;
   background-color: white;
 `;

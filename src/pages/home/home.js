@@ -8,7 +8,10 @@ import {
 } from "../../components/sharedStyledComponents/index";
 
 import bathTubImage from "../../images/bathtub1.jpg";
-import splashImage from "../../images/splash.jpg";
+// import splashImage from "../../images/splash.jpg";
+import luxuryBathroom from "../../images/minimalist-bathroom.jpg";
+import luxuryKitchen from "../../images/minKitchen.jpg";
+import accessoriesImage from "../../images/MattBlack.jpg";
 
 import styled from "styled-components";
 
@@ -42,7 +45,7 @@ class Home extends Component {
           />
         </ImageContainer>
 
-        <Section bgImage={splashImage}>
+        <Section>
           <RowStyled>
             <ColStyled lg={12} md={12} sm={12}>
               <div style={{ textAlign: "left" }}>
@@ -52,15 +55,51 @@ class Home extends Component {
             </ColStyled>
 
             <ColStyled lg={6} md={6} sm={12}>
-              <ProductCard>Bathroom</ProductCard>
+              
+              <RowStyled marginleft="0"><h5>Bathroom</h5></RowStyled>
+              <ProductCard>
+                <img
+                  id="bathTubImgimage"
+                  src={luxuryBathroom}
+                  alt="Bath"
+                  border="0"
+                  style={{ minWidth: "100%", maxHeight: "100%" }}
+                />
+              </ProductCard>
             </ColStyled>
 
             <ColStyled lg={6} md={6} sm={12}>
-              <ProductCard>Kitchen</ProductCard>
+              <RowStyled  marginleft="0">
+                <h5>
+                Kitchen
+                </h5>
+                </RowStyled>
+              <ProductCard>
+                <img
+                  id="bathTubImgimage"
+                  src={luxuryKitchen}
+                  alt="Bath"
+                  border="0"
+                  style={{ minWidth: "100%", maxHeight: "100%" }}
+                />
+              </ProductCard>
             </ColStyled>
 
             <ColStyled lg={6} md={6} sm={12}>
-              <ProductCard>Accessories</ProductCard>
+            <RowStyled  marginleft="0">
+                <h5>
+                Accessories
+                </h5>
+                </RowStyled>
+              <ProductCard>
+                <img
+                  id="bathTubImgimage"
+                  src={accessoriesImage}
+                  alt="Bath"
+                  border="0"
+                  style={{ minWidth: "100%", maxHeight: "100%" }}
+                />
+              </ProductCard>
             </ColStyled>
           </RowStyled>
         </Section>
@@ -123,8 +162,7 @@ class Home extends Component {
           </RowStyled>
         </Section>
 
-
-        <Footer/>
+        <Footer />
       </>
     );
   }
