@@ -7,4 +7,5 @@ export const InformationBar = styled.div`
     color: white;
     vertical-align: middle; 
     line-height: 3rem;
+    text-align: center;
 `;

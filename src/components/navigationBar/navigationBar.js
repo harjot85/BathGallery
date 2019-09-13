@@ -12,6 +12,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import {getInformationBar} from "../../utilities/functions";
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <div>
+        {getInformationBar()}
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">Bath Gallery</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
