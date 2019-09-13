@@ -1,11 +1,130 @@
 import React, { Component } from "react";
 
+import {
+  RowStyled,
+  ColStyled,
+  ProductCard,
+  Section
+} from "../../components/sharedStyledComponents/index";
+
+import bathTubImage from "../../images/bathtub1.jpg";
+import splashImage from "../../images/splash.jpg";
+
+import styled from "styled-components";
+
+import Footer from "../../components/footer/footer";
+
+const ImageContainer = styled.div`
+  &&& {
+    height: 100%;
+    width: 100%;
+  }
+`;
+
+const Brand = styled.div`
+  height: 100px;
+  width: 225px;
+  background-color: grey;
+`;
+
 class Home extends Component {
   state = {};
   render() {
     return (
       <>
+        <ImageContainer>
+          <img
+            id="bathTubImgimage"
+            src={bathTubImage}
+            alt="Bath"
+            border="0"
+            style={{ maxWidth: "100%" }}
+          />
+        </ImageContainer>
 
+        <Section bgImage={splashImage}>
+          <RowStyled>
+            <ColStyled lg={12} md={12} sm={12}>
+              <div style={{ textAlign: "left" }}>
+                <h1>Products</h1>
+                <hr />
+              </div>
+            </ColStyled>
+
+            <ColStyled lg={6} md={6} sm={12}>
+              <ProductCard>Bathroom</ProductCard>
+            </ColStyled>
+
+            <ColStyled lg={6} md={6} sm={12}>
+              <ProductCard>Kitchen</ProductCard>
+            </ColStyled>
+
+            <ColStyled lg={6} md={6} sm={12}>
+              <ProductCard>Accessories</ProductCard>
+            </ColStyled>
+          </RowStyled>
+        </Section>
+
+        {/* --------Instagram-------- */}
+        <Section>
+          <RowStyled>
+            <ColStyled lg={12} md={12} sm={12}>
+              <div style={{ textAlign: "left" }}>
+                <h1>Latest</h1>
+                <hr />
+              </div>
+            </ColStyled>
+
+            <ColStyled padding="0 10%" lg={4} md={6} sm={12}>
+              <ProductCard>Instagram</ProductCard>
+            </ColStyled>
+            <ColStyled padding="0 10%" lg={4} md={6} sm={12}>
+              <ProductCard>Instagram</ProductCard>
+            </ColStyled>
+            <ColStyled padding="0 10%" lg={4} md={6} sm={12}>
+              <ProductCard>Instagram</ProductCard>
+            </ColStyled>
+          </RowStyled>
+        </Section>
+
+        {/* --------Brands-------- */}
+        <Section>
+          <RowStyled>
+            <ColStyled lg={12} md={12} sm={12}>
+              <div style={{ textAlign: "left" }}>
+                <h1>Brands we Carry</h1>
+                <hr />
+              </div>
+            </ColStyled>
+            <ColStyled lg={2} md={2} sm={6}>
+              <Brand>Brand </Brand>
+            </ColStyled>
+            <ColStyled lg={2} md={2} sm={6}>
+              <Brand>Brand </Brand>
+            </ColStyled>
+            <ColStyled lg={2} md={2} sm={6}>
+              <Brand>Brand </Brand>
+            </ColStyled>
+            <ColStyled lg={2} md={2} sm={6}>
+              <Brand>Brand </Brand>
+            </ColStyled>
+            <ColStyled lg={2} md={2} sm={6}>
+              <Brand>Brand </Brand>
+            </ColStyled>
+            <ColStyled lg={2} md={2} sm={6}>
+              <Brand>Brand </Brand>
+            </ColStyled>
+            <ColStyled lg={2} md={2} sm={6}>
+              <Brand>Brand </Brand>
+            </ColStyled>
+            <ColStyled lg={2} md={2} sm={6}>
+              <Brand>Brand </Brand>
+            </ColStyled>
+          </RowStyled>
+        </Section>
+
+
+        <Footer/>
       </>
     );
   }

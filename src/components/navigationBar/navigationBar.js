@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Collapse,
-  Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
@@ -13,6 +12,7 @@ import {
   DropdownItem
 } from "reactstrap";
 import {getInformationBar} from "../../utilities/functions";
+import {NavbarStyled} from './styled';
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -32,13 +32,13 @@ export default class Navigation extends React.Component {
     return (
       <div>
         {getInformationBar()}
-        <Navbar color="light" light expand="md">
+        <NavbarStyled color="light" light expand="md">
           <NavbarBrand href="/">Bath Gallery</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/home/">Home</NavLink>
+                <NavLink href="/">Home</NavLink>
               </NavItem>
               
               <UncontrolledDropdown nav inNavbar>
@@ -61,7 +61,7 @@ export default class Navigation extends React.Component {
               </NavItem>
             </Nav>
           </Collapse>
-        </Navbar>
+        </NavbarStyled>
       </div>
     );
   }
