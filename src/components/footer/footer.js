@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { FooterContainer, FooterStyles, FooterSection } from "./styled";
+
 import { Row, Col } from "reactstrap";
+import { ColStyled, Text } from "../sharedStyledComponents/index";
+
 import { H3 } from "../sharedStyledComponents/index";
 import { Link } from "react-router-dom";
 
@@ -30,12 +33,7 @@ class Footer extends Component {
                 width: "100%"
               }}
             >
-              <FooterSection
-                lg="4"
-                md="4"
-                xs="12"
-                textalign="left"
-              >
+              <FooterSection lg="4" md="4" xs="12" textalign="left">
                 <Row>
                   <Col>
                     <H3 style={{ textAlign: "left" }} inputColor="#A7C9DF">
@@ -53,12 +51,7 @@ class Footer extends Component {
                   <Col>Sunday Closed</Col>
                 </Row>
               </FooterSection>
-              <FooterSection
-                lg="4"
-                md="4"
-                xs="12"
-                textalign="left"
-              >
+              <FooterSection lg="4" md="4" xs="12" textalign="left">
                 <H3 style={{ textAlign: "left" }} inputColor="#A7C9DF">
                   Contact
                 </H3>
@@ -72,9 +65,7 @@ class Footer extends Component {
                   <Col>Email: info@bathgallery.ca</Col>
                 </Row>
               </FooterSection>
-              <FooterSection lg="4" md="4" xs="12" 
-              
-              >
+              <FooterSection lg="4" md="4" xs="12">
                 <Row>
                   <Col>
                     <H3 inputColor="#A7C9DF" />
@@ -102,6 +93,11 @@ class Footer extends Component {
                   </FooterStyles>
                 </Row>
               </FooterSection>
+              <ColStyled margintop="4rem" lg={12} md={12} sm={12}>
+                <Text>
+                © copyright Kaliber Products Ltd. DBA Bath Gallery 2018
+                </Text>
+              </ColStyled>
             </Row>
           </div>
         </FooterContainer>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Input, Label } from "reactstrap";
 
 export const InformationBar = styled.div`
   width: 100%;
@@ -14,7 +14,7 @@ export const InformationBar = styled.div`
 export const ProductCard = styled.div`
   height: ${props => props.height || "25rem"};
   width: ${props => props.width || "100%"};
-  border: 2px solid #F1F1F1;
+  border: 2px solid #f1f1f1;
   border-radius: 0.2rem;
   margin: 0 auto;
   background-color: white;
@@ -37,6 +37,9 @@ export const ColStyled = styled(Col)`
 export const Section = styled.div`
   margin-top: ${props => props.margintop || "5rem"};
   background-image: ${props => `url(${props.bgImage})` || ""};
+  &&& {
+    padding: ${props => props.padding};
+  }
 `;
 
 export const H3 = styled.h3`
@@ -50,4 +53,23 @@ export const H3 = styled.h3`
   @media (max-width: 700px) {
     font-size: 16px;
   }
+`;
+
+export const LabelStyled = styled(Label)`
+  margin-top: 1rem;
+`;
+
+
+export const InputStyled = styled(Input)`
+  &&& {
+    border: none;
+    border-bottom: 1px solid #ced4da ;
+    border-radius: 0;
+  }
+`;
+
+export const Text = styled.p`
+  font-size: ${props => props.fontSize || ""};
+  color: ${props => props.fontSize || "grey"};
+  padding-bottom: ${props => props.paddingbottom || "0"};
 `;
