@@ -11,17 +11,27 @@ export const InformationBar = styled.div`
   text-align: center;
 `;
 
-export const ProductCard = styled.div`
+export const ProductCardContainer = styled.div`
   height: ${props => props.height || "25rem"};
   width: ${props => props.width || "100%"};
   border: 2px solid #f1f1f1;
   border-radius: 0.2rem;
   margin: 0 auto;
   background-color: white;
+  display: inline-flex;
+`;
+
+export const ProductCard = styled.div`
+  margin: 2em;
+  border: 1px solid #f1f1f1;
+  padding: 1em;
+  min-height: 200px;
+  min-width: 250px;
 `;
 
 export const RowStyled = styled(Row)`
   margin-top: ${props => props.margintop || "1rem"};
+  margin-bottom: ${props => props.marginBottom || "auto"};
   &&& {
     margin-right: ${props => props.marginright || "4rem"};
     margin-left: ${props => props.marginleft || "4rem"};
@@ -32,6 +42,7 @@ export const ColStyled = styled(Col)`
   margin: ${props => props.margin || "0"};
   padding: ${props => props.padding || "0"};
   margin-top: ${props => props.margintop || "2rem"};
+  margin-bottom: ${props => props.marginbottom || "0"};
 `;
 
 export const Section = styled.div`
@@ -59,11 +70,10 @@ export const LabelStyled = styled(Label)`
   margin-top: 1rem;
 `;
 
-
 export const InputStyled = styled(Input)`
   &&& {
     border: none;
-    border-bottom: 1px solid #ced4da ;
+    border-bottom: 1px solid #ced4da;
     border-radius: 0;
   }
 `;

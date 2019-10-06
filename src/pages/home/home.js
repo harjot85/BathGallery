@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import {
   RowStyled,
   ColStyled,
-  ProductCard,
+  ProductCardContainer,
   Section
 } from "../../components/sharedStyledComponents/index";
 
@@ -57,7 +57,7 @@ class Home extends Component {
             <ColStyled lg={6} md={6} sm={12}>
               
               <RowStyled marginleft="0"><h5>Bathroom</h5></RowStyled>
-              <ProductCard>
+              <ProductCardContainer>
                 <img
                   id="bathTubImgimage"
                   src={luxuryBathroom}
@@ -65,7 +65,7 @@ class Home extends Component {
                   border="0"
                   style={{ minWidth: "100%", maxHeight: "100%" }}
                 />
-              </ProductCard>
+              </ProductCardContainer>
             </ColStyled>
 
             <ColStyled lg={6} md={6} sm={12}>
@@ -74,7 +74,7 @@ class Home extends Component {
                 Kitchen
                 </h5>
                 </RowStyled>
-              <ProductCard>
+              <ProductCardContainer>
                 <img
                   id="bathTubImgimage"
                   src={luxuryKitchen}
@@ -82,7 +82,7 @@ class Home extends Component {
                   border="0"
                   style={{ minWidth: "100%", maxHeight: "100%" }}
                 />
-              </ProductCard>
+              </ProductCardContainer>
             </ColStyled>
 
             <ColStyled lg={6} md={6} sm={12}>
@@ -91,7 +91,7 @@ class Home extends Component {
                 Accessories
                 </h5>
                 </RowStyled>
-              <ProductCard>
+              <ProductCardContainer>
                 <img
                   id="bathTubImgimage"
                   src={accessoriesImage}
@@ -99,7 +99,7 @@ class Home extends Component {
                   border="0"
                   style={{ minWidth: "100%", maxHeight: "100%" }}
                 />
-              </ProductCard>
+              </ProductCardContainer>
             </ColStyled>
           </RowStyled>
         </Section>
@@ -115,13 +115,13 @@ class Home extends Component {
             </ColStyled>
 
             <ColStyled padding="0 10%" lg={4} md={6} sm={12}>
-              <ProductCard>Instagram</ProductCard>
+              <ProductCardContainer>Instagram</ProductCardContainer>
             </ColStyled>
             <ColStyled padding="0 10%" lg={4} md={6} sm={12}>
-              <ProductCard>Instagram</ProductCard>
+              <ProductCardContainer>Instagram</ProductCardContainer>
             </ColStyled>
             <ColStyled padding="0 10%" lg={4} md={6} sm={12}>
-              <ProductCard>Instagram</ProductCard>
+              <ProductCardContainer>Instagram</ProductCardContainer>
             </ColStyled>
           </RowStyled>
         </Section>
