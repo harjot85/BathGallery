@@ -24,9 +24,10 @@ export const ProductCardContainer = styled.div`
 export const ProductCard = styled.div`
   margin: 2em;
   border: 1px solid #f1f1f1;
-  padding: 1em;
+  padding: 0;
   min-height: 200px;
   min-width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
 export const RowStyled = styled(Row)`
@@ -40,7 +41,9 @@ export const RowStyled = styled(Row)`
 
 export const ColStyled = styled(Col)`
   margin: ${props => props.margin || "0"};
-  padding: ${props => props.padding || "0"};
+  &&& {
+    padding: ${props => props.padding || "0"};
+  }
   margin-top: ${props => props.margintop || "2rem"};
   margin-bottom: ${props => props.marginbottom || "0"};
 `;

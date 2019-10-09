@@ -11,8 +11,10 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import {getInformationBar} from "../../utilities/functions";
-import {NavbarStyled} from './styled';
+import logo from '../../images/logobg.jpg' 
+import { getInformationBar } from "../../utilities/functions";
+import { NavbarStyled } from "./styled";
+
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -33,14 +35,20 @@ export default class Navigation extends React.Component {
       <div>
         {getInformationBar()}
         <NavbarStyled color="light" light expand="md">
-          <NavbarBrand href="/">Bath Gallery</NavbarBrand>
+          <NavbarBrand href="/">
+          <img
+              style={{ maxWidth: "125px", maxHeight: "80px" }}
+              src={logo}
+              alt="Bath Gallery"
+            />
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="/">Home</NavLink>
               </NavItem>
-              
+
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Products
@@ -55,9 +63,7 @@ export default class Navigation extends React.Component {
               </UncontrolledDropdown>
 
               <NavItem>
-                <NavLink href="/contact/">
-                  Contact
-                </NavLink>
+                <NavLink href="/contact/">Contact</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

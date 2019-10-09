@@ -7,6 +7,12 @@ import {
   Section
 } from "../../components/sharedStyledComponents/index";
 
+import bathTub_1 from "../../images/bathtub_sm_1.jpg";
+import bathTub_2 from "../../images/bathtub_sm_2.jpg";
+import bathTub_3 from "../../images/bathtub_sm_3.jpg";
+import bathTub_4 from "../../images/bathtub_sm_4.jpg";
+import bathTub_5 from "../../images/bathtub_sm_5.jpg";
+
 import Footer from "../../components/footer/footer";
 
 class Products extends Component {
@@ -31,27 +37,117 @@ class Products extends Component {
                 <ProductCardContainer height="auto">
                   <RowStyled marginBottom="2em">
                     <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
+                      <ProductCard>
+                        <RowStyled marginleft="0" marginright="0" margintop="0">
+                          <ColStyled margintop="0">
+                            <img
+                              id="bathTubImgimage"
+                              src={bathTub_1}
+                              alt="Bath"
+                              border="0"
+                              style={{ width: "388px", height: "250px" }}
+                            />
+                          </ColStyled>
+                          <ColStyled>
+                          Description of the tub
+                          </ColStyled>
+                        </RowStyled>
+                      </ProductCard>
                     </ColStyled>
 
                     <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
+                      <ProductCard>
+                      <RowStyled marginleft="0" marginright="0" margintop="0">
+                          <ColStyled margintop="0">
+                            <img
+                              id="bathTubImgimage"
+                              src={bathTub_2}
+                              alt="Bath"
+                              border="0"
+                              style={{ width: "388px", height: "250px" }}
+                            />
+                          </ColStyled>
+                          <ColStyled>
+                          Description of the tub
+                          </ColStyled>
+                        </RowStyled>
+                      </ProductCard>
                     </ColStyled>
 
                     <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
+                      <ProductCard>
+                      <RowStyled marginleft="0" marginright="0" margintop="0">
+                          <ColStyled margintop="0">
+                            <img
+                              id="bathTubImgimage"
+                              src={bathTub_3}
+                              alt="Bath"
+                              border="0"
+                              style={{ width: "388px", height: "250px" }}
+                            />
+                          </ColStyled>
+                          <ColStyled>
+                          Description of the tub
+                          </ColStyled>
+                        </RowStyled>
+                      </ProductCard>
                     </ColStyled>
 
                     <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
+                     <ProductCard>
+                      <RowStyled marginleft="0" marginright="0" margintop="0">
+                          <ColStyled margintop="0">
+                            <img
+                              id="bathTubImgimage"
+                              src={bathTub_4}
+                              alt="Bath"
+                              border="0"
+                              style={{ width: "388px", height: "250px" }}
+                            />
+                          </ColStyled>
+                          <ColStyled>
+                          Description of the tub
+                          </ColStyled>
+                        </RowStyled>
+                      </ProductCard>
                     </ColStyled>
 
                     <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
+                     <ProductCard>
+                      <RowStyled marginleft="0" marginright="0" margintop="0">
+                          <ColStyled margintop="0">
+                            <img
+                              id="bathTubImgimage"
+                              src={bathTub_5}
+                              alt="Bath"
+                              border="0"
+                              style={{ width: "388px", height: "250px" }}
+                            />
+                          </ColStyled>
+                          <ColStyled>
+                          Description of the tub
+                          </ColStyled>
+                        </RowStyled>
+                      </ProductCard>
                     </ColStyled>
 
                     <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
+                     <ProductCard>
+                      <RowStyled marginleft="0" marginright="0" margintop="0">
+                          <ColStyled margintop="0">
+                            <img
+                              id="bathTubImgimage"
+                              src={bathTub_1}
+                              alt="Bath"
+                              border="0"
+                              style={{ width: "388px", height: "250px" }}
+                            />
+                          </ColStyled>
+                          <ColStyled>
+                          Description of the tub
+                          </ColStyled>
+                        </RowStyled>
+                      </ProductCard>
                     </ColStyled>
                   </RowStyled>
                 </ProductCardContainer>
