@@ -48,7 +48,7 @@ class Products extends Component {
                               style={{ width: "388px", height: "250px" }}
                             />
                           </ColStyled>
-                          <ColStyled>
+                          <ColStyled lg={12} md={12} sm={12}>
                           Description of the tub
                           </ColStyled>
                         </RowStyled>
@@ -67,7 +67,7 @@ class Products extends Component {
                               style={{ width: "388px", height: "250px" }}
                             />
                           </ColStyled>
-                          <ColStyled>
+                          <ColStyled lg={12} md={12} sm={12}>
                           Description of the tub
                           </ColStyled>
                         </RowStyled>
@@ -86,7 +86,7 @@ class Products extends Component {
                               style={{ width: "388px", height: "250px" }}
                             />
                           </ColStyled>
-                          <ColStyled>
+                          <ColStyled lg={12} md={12} sm={12}>
                           Description of the tub
                           </ColStyled>
                         </RowStyled>
@@ -105,7 +105,7 @@ class Products extends Component {
                               style={{ width: "388px", height: "250px" }}
                             />
                           </ColStyled>
-                          <ColStyled>
+                          <ColStyled lg={12} md={12} sm={12}>
                           Description of the tub
                           </ColStyled>
                         </RowStyled>
@@ -124,7 +124,7 @@ class Products extends Component {
                               style={{ width: "388px", height: "250px" }}
                             />
                           </ColStyled>
-                          <ColStyled>
+                          <ColStyled lg={12} md={12} sm={12}>
                           Description of the tub
                           </ColStyled>
                         </RowStyled>
@@ -143,7 +143,7 @@ class Products extends Component {
                               style={{ width: "388px", height: "250px" }}
                             />
                           </ColStyled>
-                          <ColStyled>
+                          <ColStyled lg={12} md={12} sm={12}>
                           Description of the tub
                           </ColStyled>
                         </RowStyled>
