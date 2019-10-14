@@ -29,7 +29,7 @@ class Footer extends Component {
               style={{
                 color: "#fff",
                 paddingTop: "5%",
-                paddingBottom: "2%",
+               
                 width: "100%"
               }}
             >

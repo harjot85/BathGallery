@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Label, Input, FormGroup, Button, Alert } from "reactstrap";
+import { Input, FormGroup, Alert } from "reactstrap";
 
 import {
   RowStyled,
   ColStyled,
   InputStyled,
   LabelStyled,
+  ButtonStyled,
   Section
 } from "../../components/sharedStyledComponents/index";
 
@@ -13,16 +14,16 @@ import Footer from "../../components/footer/footer";
 
 class Contact extends Component {
   state = {
-      fullName:"",
-      emailAddress:"",
-      phone:"",
-      message:""
+    fullName: "",
+    emailAddress: "",
+    phone: "",
+    message: ""
   };
 
-  handleClear =() => {
+  handleClear = () => {
     //clear state
-    this.setState({})
-  }
+    this.setState({});
+  };
 
   render() {
     return (
@@ -61,11 +62,10 @@ class Contact extends Component {
               <InputStyled name="phone" />
             </ColStyled>
 
-            
-            <ColStyled lg={4} md={4} sm={12} margintop= "4rem">
+            <ColStyled lg={4} md={4} sm={12} margintop="4rem">
               <LabelStyled>Your Message</LabelStyled>
             </ColStyled>
-            <ColStyled lg={6} md={6} sm={12} margintop= "4rem">
+            <ColStyled lg={6} md={6} sm={12} margintop="4rem">
               <Input
                 className="textarea-box"
                 name="message"
@@ -74,31 +74,38 @@ class Contact extends Component {
                 //onChange={this.handleChange}
               />
             </ColStyled>
-            
           </RowStyled>
 
           <RowStyled>
             <ColStyled lg={4} md={4} sm={12} />
-            <ColStyled lg={6} md={6} sm={12}>
-              <Button
-              style={{ backgroundColor: "#000", minWidth: "150px", width: "200px" }}
-                size="lg"
-                block
-                // onClick={this.handleSubmit}
+            <ColStyled lg={8} md={8} sm={12}>
+              <div
+                style={{
+                  display: "inline-flex",
+                  textAlign: "left",
+                  width: "100%",
+                  marginLeft: "1rem"
+                }}
               >
-                Submit
-              </Button>
-            
-              <Button
-                style={{ marginLeft: "1rem", minWidth: "150px", width: "200px" }}
-                outline
-                color="secondary"
-                size="lg"
-                block
-                onClick={this.handleClear}
-              >
-                Clear
-              </Button>
+                <ButtonStyled
+                  color="info"
+                  size="lg"
+                  block
+                  // onClick={this.handleSubmit}
+                >
+                  Submit
+                </ButtonStyled>
+
+                <ButtonStyled
+                  outline
+                  color="secondary"
+                  size="lg"
+                  block
+                  onClick={this.handleClear}
+                >
+                  Clear
+                </ButtonStyled>
+              </div>
             </ColStyled>
           </RowStyled>
         </Section>

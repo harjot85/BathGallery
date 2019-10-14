@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Row, Col, Input, Label } from "reactstrap";
+import { Row, Col, Input, Label, Button } from "reactstrap";
 
 export const InformationBar = styled.div`
   width: 100%;
@@ -66,6 +66,14 @@ export const H3 = styled.h3`
 
   @media (max-width: 700px) {
     font-size: 16px;
+  }
+`;
+
+export const ButtonStyled = styled(Button)`
+  margin-left: 1rem;
+  min-width: 100px;
+  &&&{
+  width: 200px;
   }
 `;
 

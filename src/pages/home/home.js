@@ -55,8 +55,9 @@ class Home extends Component {
             </ColStyled>
 
             <ColStyled lg={6} md={6} sm={12}>
-              
-              <RowStyled marginleft="0"><h5>Bathroom</h5></RowStyled>
+              <RowStyled marginleft="0">
+                <h5>Bathroom</h5>
+              </RowStyled>
               <ProductCardContainer>
                 <img
                   id="bathTubImgimage"
@@ -69,11 +70,9 @@ class Home extends Component {
             </ColStyled>
 
             <ColStyled lg={6} md={6} sm={12}>
-              <RowStyled  marginleft="0">
-                <h5>
-                Kitchen
-                </h5>
-                </RowStyled>
+              <RowStyled marginleft="0">
+                <h5>Kitchen</h5>
+              </RowStyled>
               <ProductCardContainer>
                 <img
                   id="bathTubImgimage"
@@ -86,11 +85,9 @@ class Home extends Component {
             </ColStyled>
 
             <ColStyled lg={6} md={6} sm={12}>
-            <RowStyled  marginleft="0">
-                <h5>
-                Accessories
-                </h5>
-                </RowStyled>
+              <RowStyled marginleft="0">
+                <h5>Accessories</h5>
+              </RowStyled>
               <ProductCardContainer>
                 <img
                   id="bathTubImgimage"
@@ -114,14 +111,14 @@ class Home extends Component {
               </div>
             </ColStyled>
 
-            <ColStyled padding="0 10%" lg={4} md={6} sm={12}>
-              <ProductCardContainer>Instagram</ProductCardContainer>
+            <ColStyled padding="0 5%" lg={4} md={6} sm={12}>
+              <ProductCardContainer>News Feed</ProductCardContainer>
             </ColStyled>
-            <ColStyled padding="0 10%" lg={4} md={6} sm={12}>
-              <ProductCardContainer>Instagram</ProductCardContainer>
+            <ColStyled padding="0 5%" lg={4} md={6} sm={12}>
+              <ProductCardContainer>News Feed</ProductCardContainer>
             </ColStyled>
-            <ColStyled padding="0 10%" lg={4} md={6} sm={12}>
-              <ProductCardContainer>Instagram</ProductCardContainer>
+            <ColStyled padding="0 5%" lg={4} md={6} sm={12}>
+              <ProductCardContainer>News Feed</ProductCardContainer>
             </ColStyled>
           </RowStyled>
         </Section>
