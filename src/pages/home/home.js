@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { CardLink } from "reactstrap";
 import {
   RowStyled,
   ColStyled,
@@ -8,13 +8,12 @@ import {
 } from "../../components/sharedStyledComponents/index";
 
 import bathTubImage from "../../images/bathtub1.jpg";
-// import splashImage from "../../images/splash.jpg";
+import splashImage from "../../images/splash.jpg";
 import luxuryBathroom from "../../images/minimalist-bathroom.jpg";
 import luxuryKitchen from "../../images/minKitchen.jpg";
 import accessoriesImage from "../../images/MattBlack.jpg";
 
 import styled from "styled-components";
-
 import Footer from "../../components/footer/footer";
 
 const ImageContainer = styled.div`
@@ -45,7 +44,7 @@ class Home extends Component {
           />
         </ImageContainer>
 
-        <Section>
+        <Section id="bathroom" bgImage={splashImage}>
           <RowStyled>
             <ColStyled lg={12} md={12} sm={12}>
               <div style={{ textAlign: "left" }}>
@@ -54,25 +53,29 @@ class Home extends Component {
               </div>
             </ColStyled>
 
-            <ColStyled lg={6} md={6} sm={12}>
+            <ColStyled lg={5} md={5} sm={12}>
               <RowStyled marginleft="0">
                 <h5>Bathroom</h5>
               </RowStyled>
-              <ProductCardContainer>
-                <img
-                  id="bathTubImgimage"
-                  src={luxuryBathroom}
-                  alt="Bath"
-                  border="0"
-                  style={{ minWidth: "100%", maxHeight: "100%" }}
-                />
-              </ProductCardContainer>
+              <CardLink href="/products">
+                <ProductCardContainer>
+                  <img
+                    id="bathTubImgimage"
+                    src={luxuryBathroom}
+                    alt="Bath"
+                    border="0"
+                    style={{ minWidth: "100%", maxHeight: "100%" }}
+                  />
+                </ProductCardContainer>
+              </CardLink>
             </ColStyled>
+            <ColStyled lg={1} md={1} sm={0} />
 
-            <ColStyled lg={6} md={6} sm={12}>
+            <ColStyled lg={5} md={5} sm={12}>
               <RowStyled marginleft="0">
                 <h5>Kitchen</h5>
               </RowStyled>
+              <CardLink href="/products">
               <ProductCardContainer>
                 <img
                   id="bathTubImgimage"
@@ -82,21 +85,24 @@ class Home extends Component {
                   style={{ minWidth: "100%", maxHeight: "100%" }}
                 />
               </ProductCardContainer>
+              </CardLink>
             </ColStyled>
 
-            <ColStyled lg={6} md={6} sm={12}>
+            <ColStyled lg={5} md={5} sm={12} id="accessories">
               <RowStyled marginleft="0">
                 <h5>Accessories</h5>
               </RowStyled>
+              <CardLink href="/products">
               <ProductCardContainer>
                 <img
-                  id="bathTubImgimage"
+                  id="kitchenImg"
                   src={accessoriesImage}
                   alt="Bath"
                   border="0"
                   style={{ minWidth: "100%", maxHeight: "100%" }}
                 />
               </ProductCardContainer>
+              </CardLink>
             </ColStyled>
           </RowStyled>
         </Section>

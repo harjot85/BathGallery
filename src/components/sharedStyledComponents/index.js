@@ -28,6 +28,20 @@ export const ProductCard = styled.div`
   min-height: 200px;
   width: min-content;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all .2s ease-in-out; 
+  @media (min-width:515px){
+    margin-left: 10px;
+  }
+  @media (max-width:515px){
+    height:300px;
+    width: 200px;
+  }
+  &&& {
+  :hover { 
+    transform: scale(1.05); 
+    box-shadow: 1px 1px 4px 0px #6C9CC2;
+  }
+}
 `;
 
 export const RowStyled = styled(Row)`
@@ -36,7 +50,9 @@ export const RowStyled = styled(Row)`
   &&& {
     margin-right: ${props => props.marginright || "4rem"};
     margin-left: ${props => props.marginleft || "4rem"};
+    
   }
+  
 `;
 
 export const ColStyled = styled(Col)`

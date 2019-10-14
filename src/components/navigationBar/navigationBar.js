@@ -54,11 +54,11 @@ export default class Navigation extends React.Component {
                   Products
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>Bathroom</DropdownItem>
+                  <DropdownItem  href="#bathroom">Bathroom</DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>Kitchen</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem>Accessories</DropdownItem>
+                  <DropdownItem href='#accessories'>Accessories</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
 

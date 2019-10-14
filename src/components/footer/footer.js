@@ -23,13 +23,13 @@ class Footer extends Component {
         />
         <FooterContainer>
           <div
-            style={{ position: "absolute", textAlign: "center", width: "100%" }}
+            style={{ textAlign: "center", width: "100%" }}
           >
             <Row
               style={{
                 color: "#fff",
                 paddingTop: "5%",
-               
+
                 width: "100%"
               }}
             >
@@ -95,7 +95,7 @@ class Footer extends Component {
               </FooterSection>
               <ColStyled margintop="4rem" lg={12} md={12} sm={12}>
                 <Text>
-                © copyright Kaliber Products Ltd. DBA Bath Gallery 2018
+                  © copyright Kaliber Products Ltd. DBA Bath Gallery 2018
                 </Text>
               </ColStyled>
             </Row>

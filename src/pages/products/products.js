@@ -49,7 +49,7 @@ class Products extends Component {
                             />
                           </ColStyled>
                           <ColStyled lg={12} md={12} sm={12}>
-                          Description of the tub
+                          Description of the product
                           </ColStyled>
                         </RowStyled>
                       </ProductCard>
@@ -68,7 +68,7 @@ class Products extends Component {
                             />
                           </ColStyled>
                           <ColStyled lg={12} md={12} sm={12}>
-                          Description of the tub
+                          Description of the product
                           </ColStyled>
                         </RowStyled>
                       </ProductCard>
@@ -87,7 +87,7 @@ class Products extends Component {
                             />
                           </ColStyled>
                           <ColStyled lg={12} md={12} sm={12}>
-                          Description of the tub
+                          Description of the product
                           </ColStyled>
                         </RowStyled>
                       </ProductCard>
@@ -106,7 +106,7 @@ class Products extends Component {
                             />
                           </ColStyled>
                           <ColStyled lg={12} md={12} sm={12}>
-                          Description of the tub
+                          Description of the product
                           </ColStyled>
                         </RowStyled>
                       </ProductCard>
@@ -125,7 +125,7 @@ class Products extends Component {
                             />
                           </ColStyled>
                           <ColStyled lg={12} md={12} sm={12}>
-                          Description of the tub
+                          Description of the product
                           </ColStyled>
                         </RowStyled>
                       </ProductCard>
@@ -144,7 +144,7 @@ class Products extends Component {
                             />
                           </ColStyled>
                           <ColStyled lg={12} md={12} sm={12}>
-                          Description of the tub
+                          Description of the product
                           </ColStyled>
                         </RowStyled>
                       </ProductCard>
