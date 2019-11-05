@@ -12,6 +12,7 @@ import splashImage from "../../images/splash.jpg";
 import luxuryBathroom from "../../images/minimalist-bathroom.jpg";
 import luxuryKitchen from "../../images/minKitchen.jpg";
 import accessoriesImage from "../../images/MattBlack.jpg";
+import fireplaceImage from "../../images/fireplace.png"
 
 import styled from "styled-components";
 import Footer from "../../components/footer/footer";
@@ -97,6 +98,25 @@ class Home extends Component {
                 <img
                   id="kitchenImg"
                   src={accessoriesImage}
+                  alt="Bath"
+                  border="0"
+                  style={{ minWidth: "100%", maxHeight: "100%" }}
+                />
+              </ProductCardContainer>
+              </CardLink>
+            </ColStyled>
+
+            <ColStyled lg={1} md={1} sm={0} />
+
+            <ColStyled lg={5} md={5} sm={12} id="fireplace">
+              <RowStyled marginleft="0">
+                <h5>Fireplace</h5>
+              </RowStyled>
+              <CardLink href="/products">
+              <ProductCardContainer>
+                <img
+                  id="fireplaceImg"
+                  src={fireplaceImage}
                   alt="Bath"
                   border="0"
                   style={{ minWidth: "100%", maxHeight: "100%" }}
