@@ -8,14 +8,7 @@ import {
 } from "../../components/sharedStyledComponents/index";
 
 //Custom Components
-import {
-  ProjectCard,
-  Carousel,
-  SliderButton,
-  TechBadge,
-  TechBadgeHolder,
-  CardBodyStyled
-} from "./styled";
+import { Carousel, SliderButton } from "./styled";
 
 import { getElementsPerScreen } from "../../utilities/functions";
 
@@ -66,182 +59,164 @@ class Products extends Component {
           <RowStyled>
             <ColStyled lg={12} md={12} sm={12}>
               <div style={{ textAlign: "left" }}>
-                <h1>Products</h1>
+                <h1>Bathroom</h1>
                 <hr />
               </div>
             </ColStyled>
 
             <ColStyled lg={12} md={12} sm={12}>
-              <RowStyled marginleft="0">
-                <h5>Bathroom</h5>
-              </RowStyled>
+              <div style={{ textAlign: "left" }}>
+                <h3>Bath Tubs</h3>
+              </div>
+            </ColStyled>
+            <ProductCardContainer height="auto">
+            <ColStyled lg={12} md={12} sm={12} padding="0 50px" margintop="1rem">
+            
               {/* <RowStyled marginleft="0"> */}
-                
-                  {/* <RowStyled marginBottom="2em">  */}
-                    <Carousel
-                      numberOfCards={3}
-                      gutter={12}
-                      showSlither={false}
-                      firstAndLastGutter={false}
-                      freeScrolling={false}
-                      requestToChangeActive={this.changeActiveItem}
-                      activeItemIndex={activeItemIndex}
-                      activePosition={"center"}
-                      chevronWidth={99}
-                      rightChevron={
-                        <SliderButton outline color="secondary" size="lg">
-                          {">"}
-                        </SliderButton>
-                      }
-                      leftChevron={
-                        <SliderButton outline color="secondary" size="lg">
-                          {"<"}
-                        </SliderButton>
-                      }
-                      outsideChevron={false}
-                    >
-                      <ColStyled lg={4} md={4} sm={12}>
-                        <ProductCard>
-                          <RowStyled
-                            marginleft="0"
-                            marginright="0"
-                            margintop="0"
-                          >
-                            <ColStyled margintop="0">
-                              <img
-                                id="bathTubImgimage"
-                                src={bathTub_1}
-                                alt="Bath"
-                                border="0"
-                                style={{ width: "388px", height: "250px" }}
-                              />
-                            </ColStyled>
-                            <ColStyled lg={12} md={12} sm={12}>
-                              Description of the product
-                            </ColStyled>
-                          </RowStyled>
-                        </ProductCard>
-                      </ColStyled>
 
-                      <ColStyled lg={4} md={4} sm={12}>
-                        <ProductCard>
-                          <RowStyled
-                            marginleft="0"
-                            marginright="0"
-                            margintop="0"
-                          >
-                            <ColStyled margintop="0">
-                              <img
-                                id="bathTubImgimage"
-                                src={bathTub_2}
-                                alt="Bath"
-                                border="0"
-                                style={{ width: "388px", height: "250px" }}
-                              />
-                            </ColStyled>
-                            <ColStyled lg={12} md={12} sm={12}>
-                              Description of the product
-                            </ColStyled>
-                          </RowStyled>
-                        </ProductCard>
-                      </ColStyled>
+              {/* <RowStyled marginBottom="2em">  */}
 
-                      <ColStyled lg={4} md={4} sm={12}>
-                        <ProductCard>
-                          <RowStyled
-                            marginleft="0"
-                            marginright="0"
-                            margintop="0"
-                          >
-                            <ColStyled margintop="0">
-                              <img
-                                id="bathTubImgimage"
-                                src={bathTub_3}
-                                alt="Bath"
-                                border="0"
-                                style={{ width: "388px", height: "250px" }}
-                              />
-                            </ColStyled>
-                            <ColStyled lg={12} md={12} sm={12}>
-                              Description of the product
-                            </ColStyled>
-                          </RowStyled>
-                        </ProductCard>
+              <Carousel
+                numberOfCards={this.state.cards}
+                gutter={12}
+                showSlither={false}
+                firstAndLastGutter={false}
+                freeScrolling={false}
+                requestToChangeActive={this.changeActiveItem}
+                activeItemIndex={activeItemIndex}
+                activePosition={"center"}
+                chevronWidth={99}
+                rightChevron={
+                  <SliderButton outline color="dark" size="lg">
+                    {">"}
+                  </SliderButton>
+                }
+                leftChevron={
+                  <SliderButton outline color="dark" size="lg">
+                    {"<"}
+                  </SliderButton>
+                }
+                outsideChevron={true}
+              >
+                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
+                  <ProductCard>
+                    <RowStyled marginleft="0" marginright="0" margintop="0">
+                      <ColStyled margintop="0">
+                        <img
+                          id="bathTubImgimage"
+                          src={bathTub_1}
+                          alt="Bath"
+                          border="0"
+                          style={{ width: "388px", height: "250px" }}
+                        />
                       </ColStyled>
+                      <ColStyled lg={12} md={12} sm={12}>
+                        Description of the product
+                      </ColStyled>
+                    </RowStyled>
+                  </ProductCard>
+                </ColStyled>
 
-                      <ColStyled lg={4} md={4} sm={12}>
-                        <ProductCard>
-                          <RowStyled
-                            marginleft="0"
-                            marginright="0"
-                            margintop="0"
-                          >
-                            <ColStyled margintop="0">
-                              <img
-                                id="bathTubImgimage"
-                                src={bathTub_4}
-                                alt="Bath"
-                                border="0"
-                                style={{ width: "388px", height: "250px" }}
-                              />
-                            </ColStyled>
-                            <ColStyled lg={12} md={12} sm={12}>
-                              Description of the product
-                            </ColStyled>
-                          </RowStyled>
-                        </ProductCard>
+                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
+                  <ProductCard>
+                    <RowStyled marginleft="0" marginright="0" margintop="0">
+                      <ColStyled margintop="0">
+                        <img
+                          id="bathTubImgimage"
+                          src={bathTub_2}
+                          alt="Bath"
+                          border="0"
+                          style={{ width: "388px", height: "250px" }}
+                        />
                       </ColStyled>
+                      <ColStyled lg={12} md={12} sm={12}>
+                        Description of the product
+                      </ColStyled>
+                    </RowStyled>
+                  </ProductCard>
+                </ColStyled>
 
-                      <ColStyled lg={4} md={4} sm={12}>
-                        <ProductCard>
-                          <RowStyled
-                            marginleft="0"
-                            marginright="0"
-                            margintop="0"
-                          >
-                            <ColStyled margintop="0">
-                              <img
-                                id="bathTubImgimage"
-                                src={bathTub_5}
-                                alt="Bath"
-                                border="0"
-                                style={{ width: "388px", height: "250px" }}
-                              />
-                            </ColStyled>
-                            <ColStyled lg={12} md={12} sm={12}>
-                              Description of the product
-                            </ColStyled>
-                          </RowStyled>
-                        </ProductCard>
+                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
+                  <ProductCard>
+                    <RowStyled marginleft="0" marginright="0" margintop="0">
+                      <ColStyled margintop="0">
+                        <img
+                          id="bathTubImgimage"
+                          src={bathTub_3}
+                          alt="Bath"
+                          border="0"
+                          style={{ width: "388px", height: "250px" }}
+                        />
                       </ColStyled>
+                      <ColStyled lg={12} md={12} sm={12}>
+                        Description of the product
+                      </ColStyled>
+                    </RowStyled>
+                  </ProductCard>
+                </ColStyled>
 
-                      <ColStyled lg={4} md={4} sm={12}>
-                        <ProductCard>
-                          <RowStyled
-                            marginleft="0"
-                            marginright="0"
-                            margintop="0"
-                          >
-                            <ColStyled margintop="0">
-                              <img
-                                id="bathTubImgimage"
-                                src={bathTub_1}
-                                alt="Bath"
-                                border="0"
-                                style={{ width: "388px", height: "250px" }}
-                              />
-                            </ColStyled>
-                            <ColStyled lg={12} md={12} sm={12}>
-                              Description of the product
-                            </ColStyled>
-                          </RowStyled>
-                        </ProductCard>
+                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
+                  <ProductCard>
+                    <RowStyled marginleft="0" marginright="0" margintop="0">
+                      <ColStyled margintop="0">
+                        <img
+                          id="bathTubImgimage"
+                          src={bathTub_4}
+                          alt="Bath"
+                          border="0"
+                          style={{ width: "388px", height: "250px" }}
+                        />
                       </ColStyled>
-                    </Carousel>
-                 {/* </RowStyled> */}
-             
-               {/* </RowStyled> */}
-                  </ColStyled>
+                      <ColStyled lg={12} md={12} sm={12}>
+                        Description of the product
+                      </ColStyled>
+                    </RowStyled>
+                  </ProductCard>
+                </ColStyled>
+
+                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
+                  <ProductCard>
+                    <RowStyled marginleft="0" marginright="0" margintop="0">
+                      <ColStyled margintop="0">
+                        <img
+                          id="bathTubImgimage"
+                          src={bathTub_5}
+                          alt="Bath"
+                          border="0"
+                          style={{ width: "388px", height: "250px" }}
+                        />
+                      </ColStyled>
+                      <ColStyled lg={12} md={12} sm={12}>
+                        Description of the product
+                      </ColStyled>
+                    </RowStyled>
+                  </ProductCard>
+                </ColStyled>
+
+                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
+                  <ProductCard>
+                    <RowStyled marginleft="0" marginright="0" margintop="0">
+                      <ColStyled margintop="0">
+                        <img
+                          id="bathTubImgimage"
+                          src={bathTub_1}
+                          alt="Bath"
+                          border="0"
+                          style={{ width: "388px", height: "250px" }}
+                        />
+                      </ColStyled>
+                      <ColStyled lg={12} md={12} sm={12}>
+                        Description of the product
+                      </ColStyled>
+                    </RowStyled>
+                  </ProductCard>
+                </ColStyled>
+              </Carousel>
+              {/* </RowStyled> */}
+
+              {/* </RowStyled> */}
+            </ColStyled>
+            </ProductCardContainer>
 
             <ColStyled lg={12} md={12} sm={12}>
               <RowStyled marginleft="0">
@@ -285,8 +260,8 @@ class Products extends Component {
 
               <ProductCardContainer></ProductCardContainer>
             </ColStyled>
-           </RowStyled>
-        </Section> 
+          </RowStyled>
+        </Section>
 
         <Footer />
       </>

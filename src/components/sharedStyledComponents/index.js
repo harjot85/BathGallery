@@ -14,7 +14,8 @@ export const InformationBar = styled.div`
 export const ProductCardContainer = styled.div`
   height: ${props => props.height || "25rem"};
   width: ${props => props.width || "100%"};
-  border: 2px solid #f1f1f1;
+  border-top: 2px solid #f1f1f1;
+  border-bottom: 2px solid #f1f1f1;
   border-radius: 0.2rem;
   margin: 0 auto;
   background-color: white;
@@ -25,7 +26,7 @@ export const ProductCard = styled.div`
   margin: 2em;
   border: 1px solid #f1f1f1;
   padding: 0;
-  min-height: 200px;
+  min-height: 180px;
   width: min-content;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: all .2s ease-in-out; 
@@ -62,6 +63,7 @@ export const ColStyled = styled(Col)`
   }
   margin-top: ${props => props.margintop || "2rem"};
   margin-bottom: ${props => props.marginbottom || "0"};
+  
 `;
 
 export const Section = styled.div`
