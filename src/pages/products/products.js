@@ -55,6 +55,10 @@ class Products extends Component {
   
 
   render() {
+
+//TODO: create higher level object to map through Bathroom property types -> Faucets, tubs, .... 
+//TODO: Create object to have properties -> linkURL, Description, etc and map to the image array by a commom property
+
     const { activeItemIndex } = this.state;
     const imgs_bathtub = this.importAll(
       require.context(
