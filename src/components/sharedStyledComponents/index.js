@@ -15,7 +15,6 @@ export const ProductCardContainer = styled.div`
   height: ${props => props.height || "25rem"};
   width: ${props => props.width || "100%"};
   border-top: 2px solid #f1f1f1;
-  border-bottom: 2px solid #f1f1f1;
   border-radius: 0.2rem;
   margin: 0 auto;
   background-color: white;

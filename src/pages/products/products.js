@@ -12,12 +12,6 @@ import { Carousel, SliderButton } from "./styled";
 
 import { getElementsPerScreen } from "../../utilities/functions";
 
-import bathTub_1 from "../../images/bathtub_sm_1.jpg";
-import bathTub_2 from "../../images/bathtub_sm_2.jpg";
-import bathTub_3 from "../../images/bathtub_sm_3.jpg";
-import bathTub_4 from "../../images/bathtub_sm_4.jpg";
-import bathTub_5 from "../../images/bathtub_sm_5.jpg";
-
 import Footer from "../../components/footer/footer";
 
 class Products extends Component {
@@ -51,8 +45,32 @@ class Products extends Component {
 
   changeActiveItem = activeItemIndex => this.setState({ activeItemIndex });
 
+  importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => {
+      images[item.replace("./", "")] = r(item);
+    });
+    return images;
+  }
+  
+
   render() {
     const { activeItemIndex } = this.state;
+    const imgs_bathtub = this.importAll(
+      require.context(
+        "../../images/products/bathroom/bathtub",
+        false,
+        /\.(png|jpe?g)$/
+      )
+    );
+    const imgs_faucet = this.importAll(
+      require.context(
+        "../../images/products/bathroom/faucet",
+        false,
+        /\.(png|jpe?g)$/
+      )
+    );
+
     return (
       <>
         <Section margintop="2rem">
@@ -70,152 +88,121 @@ class Products extends Component {
               </div>
             </ColStyled>
             <ProductCardContainer height="auto">
-            <ColStyled lg={12} md={12} sm={12} padding="0 50px" margintop="1rem">
-            
-              {/* <RowStyled marginleft="0"> */}
-
-              {/* <RowStyled marginBottom="2em">  */}
-
-              <Carousel
-                numberOfCards={this.state.cards}
-                gutter={12}
-                showSlither={false}
-                firstAndLastGutter={false}
-                freeScrolling={false}
-                requestToChangeActive={this.changeActiveItem}
-                activeItemIndex={activeItemIndex}
-                activePosition={"center"}
-                chevronWidth={99}
-                rightChevron={
-                  <SliderButton outline color="dark" size="lg">
-                    {">"}
-                  </SliderButton>
-                }
-                leftChevron={
-                  <SliderButton outline color="dark" size="lg">
-                    {"<"}
-                  </SliderButton>
-                }
-                outsideChevron={true}
+              <ColStyled
+                lg={12}
+                md={12}
+                sm={12}
+                padding="0 50px"
+                margintop="1rem"
               >
-                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
-                  <ProductCard>
-                    <RowStyled marginleft="0" marginright="0" margintop="0">
-                      <ColStyled margintop="0">
-                        <img
-                          id="bathTubImgimage"
-                          src={bathTub_1}
-                          alt="Bath"
-                          border="0"
-                          style={{ width: "388px", height: "250px" }}
-                        />
-                      </ColStyled>
-                      <ColStyled lg={12} md={12} sm={12}>
-                        Description of the product
-                      </ColStyled>
-                    </RowStyled>
-                  </ProductCard>
-                </ColStyled>
+                <Carousel
+                  numberOfCards={this.state.cards}
+                  gutter={12}
+                  showSlither={false}
+                  firstAndLastGutter={false}
+                  freeScrolling={false}
+                  requestToChangeActive={this.changeActiveItem}
+                  activeItemIndex={activeItemIndex}
+                  activePosition={"center"}
+                  chevronWidth={99}
+                  rightChevron={
+                    <SliderButton outline color="dark" size="lg">
+                      {">"}
+                    </SliderButton>
+                  }
+                  leftChevron={
+                    <SliderButton outline color="dark" size="lg">
+                      {"<"}
+                    </SliderButton>
+                  }
+                  outsideChevron={true}
+                >
+                  {Object.keys(imgs_bathtub).map(i => 
+                    <ColStyled lg={4} md={4} sm={12} padding="10px 0">
+                      <ProductCard>
+                        <RowStyled marginleft="0" marginright="0" margintop="0">
+                          <ColStyled margintop="0">
+                            <img
+                              id="bathTubImgimage"
+                              src={imgs_bathtub[i]}
+                              alt="Bath"
+                              border="0"
+                              style={{ width: "388px", height: "250px" }}
+                            />
+                          </ColStyled>
+                          <ColStyled lg={12} md={12} sm={12}>
+                            Description of the product
+                          </ColStyled>
+                        </RowStyled>
+                      </ProductCard>
+                    </ColStyled>
+                  )}
+                </Carousel>
+              </ColStyled>
+            </ProductCardContainer>
 
-                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
-                  <ProductCard>
-                    <RowStyled marginleft="0" marginright="0" margintop="0">
-                      <ColStyled margintop="0">
-                        <img
-                          id="bathTubImgimage"
-                          src={bathTub_2}
-                          alt="Bath"
-                          border="0"
-                          style={{ width: "388px", height: "250px" }}
-                        />
-                      </ColStyled>
-                      <ColStyled lg={12} md={12} sm={12}>
-                        Description of the product
-                      </ColStyled>
-                    </RowStyled>
-                  </ProductCard>
-                </ColStyled>
+            {/* ------------------- Faucets ------------------- */}
 
-                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
-                  <ProductCard>
-                    <RowStyled marginleft="0" marginright="0" margintop="0">
-                      <ColStyled margintop="0">
-                        <img
-                          id="bathTubImgimage"
-                          src={bathTub_3}
-                          alt="Bath"
-                          border="0"
-                          style={{ width: "388px", height: "250px" }}
-                        />
-                      </ColStyled>
-                      <ColStyled lg={12} md={12} sm={12}>
-                        Description of the product
-                      </ColStyled>
-                    </RowStyled>
-                  </ProductCard>
-                </ColStyled>
-
-                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
-                  <ProductCard>
-                    <RowStyled marginleft="0" marginright="0" margintop="0">
-                      <ColStyled margintop="0">
-                        <img
-                          id="bathTubImgimage"
-                          src={bathTub_4}
-                          alt="Bath"
-                          border="0"
-                          style={{ width: "388px", height: "250px" }}
-                        />
-                      </ColStyled>
-                      <ColStyled lg={12} md={12} sm={12}>
-                        Description of the product
-                      </ColStyled>
-                    </RowStyled>
-                  </ProductCard>
-                </ColStyled>
-
-                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
-                  <ProductCard>
-                    <RowStyled marginleft="0" marginright="0" margintop="0">
-                      <ColStyled margintop="0">
-                        <img
-                          id="bathTubImgimage"
-                          src={bathTub_5}
-                          alt="Bath"
-                          border="0"
-                          style={{ width: "388px", height: "250px" }}
-                        />
-                      </ColStyled>
-                      <ColStyled lg={12} md={12} sm={12}>
-                        Description of the product
-                      </ColStyled>
-                    </RowStyled>
-                  </ProductCard>
-                </ColStyled>
-
-                <ColStyled lg={4} md={4} sm={12} padding="10px 0">
-                  <ProductCard>
-                    <RowStyled marginleft="0" marginright="0" margintop="0">
-                      <ColStyled margintop="0">
-                        <img
-                          id="bathTubImgimage"
-                          src={bathTub_1}
-                          alt="Bath"
-                          border="0"
-                          style={{ width: "388px", height: "250px" }}
-                        />
-                      </ColStyled>
-                      <ColStyled lg={12} md={12} sm={12}>
-                        Description of the product
-                      </ColStyled>
-                    </RowStyled>
-                  </ProductCard>
-                </ColStyled>
-              </Carousel>
-              {/* </RowStyled> */}
-
-              {/* </RowStyled> */}
+            <ColStyled lg={12} md={12} sm={12}>
+              <div style={{ textAlign: "left" }}>
+                <h3>Faucets</h3>
+              </div>
             </ColStyled>
+            <ProductCardContainer height="auto">
+              <ColStyled
+                lg={12}
+                md={12}
+                sm={12}
+                padding="0 50px"
+                margintop="1rem"
+              >
+                <Carousel
+                  numberOfCards={this.state.cards}
+                  gutter={12}
+                  showSlither={false}
+                  firstAndLastGutter={false}
+                  freeScrolling={false}
+                  requestToChangeActive={this.changeActiveItem}
+                  activeItemIndex={activeItemIndex}
+                  activePosition={"center"}
+                  chevronWidth={99}
+                  rightChevron={
+                    <SliderButton outline color="dark" size="lg">
+                      {">"}
+                    </SliderButton>
+                  }
+                  leftChevron={
+                    <SliderButton outline color="dark" size="lg">
+                      {"<"}
+                    </SliderButton>
+                  }
+                  outsideChevron={true}
+                >
+                  {Object.keys(imgs_faucet).map(i => 
+                    <ColStyled lg={4} md={4} sm={12} padding="10px 0">
+                      <ProductCard>
+                        <RowStyled marginleft="0" marginright="0" margintop="0">
+                          <ColStyled margintop="0">
+                            <img
+                              id="bathTubImgimage"
+                              src={imgs_faucet[i]}
+                              alt="Bath"
+                              border="0"
+                              style={{ width: "388px", height: "250px" }}
+                            />
+                          </ColStyled>
+                          <ColStyled lg={12} md={12} sm={12}>
+                            Description of the product
+                          </ColStyled>
+                        </RowStyled>
+                      </ProductCard>
+                    </ColStyled>
+                  )}
+                </Carousel>
+                {/* </RowStyled> */}
+
+                {/* </RowStyled> */}
+              </ColStyled>
             </ProductCardContainer>
 
             <ColStyled lg={12} md={12} sm={12}>
