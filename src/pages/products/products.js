@@ -4,6 +4,7 @@ import {
   ColStyled,
   ProductCardContainer,
   ProductCard,
+  CardLink,
   Section
 } from "../../components/sharedStyledComponents/index";
 
@@ -123,6 +124,7 @@ class Products extends Component {
                 >
                   {Object.keys(imgs_bathtub).map(i => 
                     <ColStyled lg={4} md={4} sm={12} padding="10px 0">
+                      <CardLink href="www.google.com">
                       <ProductCard>
                         <RowStyled marginleft="0" marginright="0" margintop="0">
                           <ColStyled margintop="0">
@@ -134,11 +136,12 @@ class Products extends Component {
                               style={{ width: "388px", height: "250px" }}
                             />
                           </ColStyled>
-                          <ColStyled lg={12} md={12} sm={12}>
+                          <ColStyled lg={12} md={12} sm={12} marginbottom="1em">
                             Description of the product
                           </ColStyled>
                         </RowStyled>
                       </ProductCard>
+                      </CardLink>
                     </ColStyled>
                   )}
                 </Carousel>

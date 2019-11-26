@@ -28,20 +28,27 @@ export const ProductCard = styled.div`
   min-height: 180px;
   width: min-content;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transition: all .2s ease-in-out; 
-  @media (min-width:515px){
+  transition: all 0.2s ease-in-out;
+  @media (min-width: 515px) {
     margin-left: 10px;
   }
-  @media (max-width:515px){
-    height:300px;
+  @media (max-width: 515px) {
+    height: 300px;
     width: 200px;
   }
   &&& {
-  :hover { 
-    transform: scale(1.05); 
-    box-shadow: 1px 1px 4px 0px #6C9CC2;
+    :hover {
+      transform: scale(1.05);
+      box-shadow: 1px 1px 4px 0px #6c9cc2;
+    }
   }
-}
+`;
+
+export const CardLink = styled.a`
+color: dimgray;  
+:hover {
+    text-decoration: none;
+  }
 `;
 
 export const RowStyled = styled(Row)`
@@ -50,9 +57,7 @@ export const RowStyled = styled(Row)`
   &&& {
     margin-right: ${props => props.marginright || "4rem"};
     margin-left: ${props => props.marginleft || "4rem"};
-    
   }
-  
 `;
 
 export const ColStyled = styled(Col)`
@@ -62,7 +67,6 @@ export const ColStyled = styled(Col)`
   }
   margin-top: ${props => props.margintop || "2rem"};
   margin-bottom: ${props => props.marginbottom || "0"};
-  
 `;
 
 export const Section = styled.div`
@@ -89,8 +93,8 @@ export const H3 = styled.h3`
 export const ButtonStyled = styled(Button)`
   margin-left: 1rem;
   min-width: 100px;
-  &&&{
-  width: 200px;
+  &&& {
+    width: 200px;
   }
 `;
 
