@@ -11,7 +11,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import logo from '../../images/Logo.PNG' 
+import logo from '../../Assets/images/Logo.PNG' 
 import { getInformationBar } from "../../utilities/functions";
 import { NavbarStyled } from "./styled";
 

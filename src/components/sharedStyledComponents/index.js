@@ -53,7 +53,7 @@ color: dimgray;
 
 export const RowStyled = styled(Row)`
   margin-top: ${props => props.margintop || "1rem"};
-  margin-bottom: ${props => props.marginBottom || "auto"};
+  margin-bottom: ${props => props.marginbottom || "auto"};
   &&& {
     margin-right: ${props => props.marginright || "4rem"};
     margin-left: ${props => props.marginleft || "4rem"};

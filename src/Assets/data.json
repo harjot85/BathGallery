@@ -1,0 +1,75 @@
+[
+  {
+    "bathroom": [
+      {
+        "basin": [
+          {
+            "id": "1001",
+            "imageFileName": "DROP_IN_BASIN_2.jpg",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "1002",
+            "imageFileName": "DROP_IN_BASIN.jpg",
+            "linkURL": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "bathFurniture": [
+          {
+            "id": "2001",
+            "imageFileName": "FLOOR_MOUNT.jpg",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "2002",
+            "imageFileName": "WALL_MOUNT.jpg",
+            "linkURL": "",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "kitchen": [
+      {
+        "faucet": [
+          {
+            "id": "1001",
+            "imageFileName": "AQUABRASS.jpg",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "1002",
+            "imageFileName": "BLANCO.jpg",
+            "linkURL": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "sink": [
+          {
+            "id": "2001",
+            "imageFileName": "APRON.jpg",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "2002",
+            "imageFileName": "",
+            "linkURL": "",
+            "description": "UNDERMOUNT.jpg"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -7,12 +7,12 @@ import {
   Section
 } from "../../components/sharedStyledComponents/index";
 
-import bathTubImage from "../../images/bathtub1.jpg";
-import splashImage from "../../images/splash.jpg";
-import luxuryBathroom from "../../images/minimalist-bathroom.jpg";
-import luxuryKitchen from "../../images/minKitchen.jpg";
-import accessoriesImage from "../../images/MattBlack.jpg";
-import fireplaceImage from "../../images/fireplace.png"
+import bathTubImage from '../../Assets/images/bathtub1.jpg';
+import splashImage from "../../Assets/images/splash.jpg";
+import luxuryBathroom from "../../Assets/images/minimalist-bathroom.jpg";
+import luxuryKitchen from "../../Assets/images/minKitchen.jpg";
+import accessoriesImage from "../../Assets/images/MattBlack.jpg";
+import fireplaceImage from "../../Assets/images/fireplace.png"
 
 import styled from "styled-components";
 import Footer from "../../components/footer/footer";

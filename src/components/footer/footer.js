@@ -76,7 +76,7 @@ class Footer extends Component {
                     <Col>
                       <div className="social-div fb">
                         <a href="/">
-                          <i class="fab fa-facebook-f"></i>
+                          <i className="fab fa-facebook-f"></i>
                         </a>
                       </div>
                       <div className="social-div in">

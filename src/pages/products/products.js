@@ -15,11 +15,15 @@ import { getElementsPerScreen } from "../../utilities/functions";
 
 import Footer from "../../components/footer/footer";
 
+//Data
+import dataFile from "../../Assets/data.json";
+
 class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: 3
+      cards: 3,
+      data: []
     };
   }
 
@@ -32,6 +36,8 @@ class Products extends Component {
   componentDidMount() {
     this.updatePredicate();
     window.addEventListener("resize", this.updatePredicate);
+    const data = dataFile;
+    this.setState({ data });
   }
 
   componentWillUnmount() {
@@ -53,28 +59,36 @@ class Products extends Component {
     });
     return images;
   }
-  
 
   render() {
+    const bathroomData = this.state.data[0];
+    const kitchenData = this.state.data[1];
 
-//TODO: create higher level object to map through Bathroom property types -> Faucets, tubs, .... 
-//TODO: Create object to have properties -> linkURL, Description, etc and map to the image array by a commom property
+    const faucet =
+      this.state.data.length > 0 ? kitchenData.kitchen[0].faucet : null;
+
+    if (faucet !== null) {
+      faucet.map(f => console.log(f.imageFileName));
+    }
+
+    //TODO: create higher level object to map through Bathroom property types -> Faucets, tubs, ....
+    //TODO: Create object to have properties -> linkURL, Description, etc and map to the image array by a commom property
 
     const { activeItemIndex } = this.state;
-    const imgs_bathtub = this.importAll(
-      require.context(
-        "../../images/products/bathroom/bathtub",
-        false,
-        /\.(png|jpe?g)$/
-      )
-    );
-    const imgs_faucet = this.importAll(
-      require.context(
-        "../../images/products/bathroom/faucet",
-        false,
-        /\.(png|jpe?g)$/
-      )
-    );
+    // const imgs_bathtub = this.importAll(
+    //   require.context(
+    //     "../../images/products/bathroom/bathtub",
+    //     false,
+    //     /\.(png|jpe?g)$/
+    //   )
+    // );
+    // const imgs_faucet = this.importAll(
+    //   require.context(
+    //     "../../images/products/bathroom/faucet",
+    //     false,
+    //     /\.(png|jpe?g)$/
+    //   )
+    // );
 
     return (
       <>
@@ -122,6 +136,7 @@ class Products extends Component {
                   }
                   outsideChevron={true}
                 >
+                  {/*                  
                   {Object.keys(imgs_bathtub).map(i => 
                     <ColStyled lg={4} md={4} sm={12} padding="10px 0">
                       <CardLink href="www.google.com">
@@ -142,7 +157,7 @@ class Products extends Component {
                         </RowStyled>
                       </ProductCard>
                       </CardLink>
-                    </ColStyled>
+                    </ColStyled> */}
                   )}
                 </Carousel>
               </ColStyled>
@@ -185,7 +200,7 @@ class Products extends Component {
                   }
                   outsideChevron={true}
                 >
-                  {Object.keys(imgs_faucet).map(i => 
+                  {/* {Object.keys(imgs_faucet).map(i => 
                     <ColStyled lg={4} md={4} sm={12} padding="10px 0">
                       <ProductCard>
                         <RowStyled marginleft="0" marginright="0" margintop="0">
@@ -203,7 +218,7 @@ class Products extends Component {
                           </ColStyled>
                         </RowStyled>
                       </ProductCard>
-                    </ColStyled>
+                    </ColStyled> */}
                   )}
                 </Carousel>
                 {/* </RowStyled> */}
@@ -218,7 +233,7 @@ class Products extends Component {
               </RowStyled>
               <RowStyled marginleft="0">
                 <ProductCardContainer height="auto">
-                  <RowStyled marginBottom="2em">
+                  <RowStyled marginbottom="2em">
                     <ColStyled lg={4} md={4} sm={12}>
                       <ProductCard />
                     </ColStyled>
