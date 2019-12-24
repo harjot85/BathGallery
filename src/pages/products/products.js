@@ -67,13 +67,6 @@ class Products extends Component {
     const faucet =
       this.state.data.length > 0 ? kitchenData.kitchen[0].faucet : null;
 
-    if (faucet !== null) {
-      faucet.map(f => console.log(f.imageFileName));
-    }
-
-    //TODO: create higher level object to map through Bathroom property types -> Faucets, tubs, ....
-    //TODO: Create object to have properties -> linkURL, Description, etc and map to the image array by a commom property
-
     const { activeItemIndex } = this.state;
     // const imgs_bathtub = this.importAll(
     //   require.context(
@@ -82,13 +75,36 @@ class Products extends Component {
     //     /\.(png|jpe?g)$/
     //   )
     // );
-    // const imgs_faucet = this.importAll(
-    //   require.context(
-    //     "../../images/products/bathroom/faucet",
-    //     false,
-    //     /\.(png|jpe?g)$/
-    //   )
-    // );
+
+    const imgs_faucet = this.importAll(
+      require.context(
+        "../../Assets/images/products/kitchen/Faucet",
+        false,
+        /\.(png|jpe?g)$/
+      )
+    );
+
+    const kitchenFaucetmageCollection = Object.keys(imgs_faucet).map(key => ({
+      imageFileName: key,
+      path: imgs_faucet[key]
+    }));
+
+    let kitchenFaucets = [];
+    if (faucet) {
+      let getKitchenFaucetsWithImages = (faucet, kitchenFaucetmageCollection) =>
+        kitchenFaucetmageCollection.map(itm => ({
+          ...faucet.find(
+            item => item.imageFileName === itm.imageFileName && item
+          ),
+          ...itm
+        }));
+
+      kitchenFaucets = getKitchenFaucetsWithImages(
+        faucet,
+        kitchenFaucetmageCollection
+      );
+    }
+    console.log(kitchenFaucets);
 
     return (
       <>
@@ -136,29 +152,37 @@ class Products extends Component {
                   }
                   outsideChevron={true}
                 >
-                  {/*                  
-                  {Object.keys(imgs_bathtub).map(i => 
+                   {Object.keys(kitchenFaucets).map(i => (
                     <ColStyled lg={4} md={4} sm={12} padding="10px 0">
                       <CardLink href="www.google.com">
-                      <ProductCard>
-                        <RowStyled marginleft="0" marginright="0" margintop="0">
-                          <ColStyled margintop="0">
-                            <img
-                              id="bathTubImgimage"
-                              src={imgs_bathtub[i]}
-                              alt="Bath"
-                              border="0"
-                              style={{ width: "388px", height: "250px" }}
-                            />
-                          </ColStyled>
-                          <ColStyled lg={12} md={12} sm={12} marginbottom="1em">
-                            Description of the product
-                          </ColStyled>
-                        </RowStyled>
-                      </ProductCard>
+                        <ProductCard>
+                          <RowStyled
+                            marginleft="0"
+                            marginright="0"
+                            margintop="0"
+                          >
+                            <ColStyled margintop="0">
+                              <img
+                                id="bathTubImgimage"
+                                src={kitchenFaucets[i].path}
+                                alt="Bath"
+                                border="0"
+                                style={{ width: "388px", height: "250px" }}
+                              />
+                            </ColStyled>
+                            <ColStyled
+                              lg={12}
+                              md={12}
+                              sm={12}
+                              marginbottom="1em"
+                            >
+                              Description of the product
+                            </ColStyled>
+                          </RowStyled>
+                        </ProductCard>
                       </CardLink>
-                    </ColStyled> */}
-                  )}
+                    </ColStyled>
+                  ))} 
                 </Carousel>
               </ColStyled>
             </ProductCardContainer>
