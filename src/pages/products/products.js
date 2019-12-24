@@ -8,11 +8,8 @@ import {
   Section
 } from "../../components/sharedStyledComponents/index";
 
-//Custom Components
-import { Carousel, SliderButton } from "./styled";
-
-import { getElementsPerScreen } from "../../utilities/functions";
-
+import ProductSectionWithCarousel from "../../components/productSectionWithCarousel/productSectionWithCarousel";
+import ProductCategory from "../../components/productCategory/productCategory";
 import Footer from "../../components/footer/footer";
 
 //Data
@@ -22,35 +19,14 @@ class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: 3,
       data: []
     };
   }
 
-  componentWillMount() {
-    this.setState({
-      activeItemIndex: 0
-    });
-  }
-
   componentDidMount() {
-    this.updatePredicate();
-    window.addEventListener("resize", this.updatePredicate);
     const data = dataFile;
     this.setState({ data });
   }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updatePredicate);
-  }
-
-  updatePredicate = () => {
-    var showCards;
-    showCards = getElementsPerScreen();
-    this.setState({ cards: showCards });
-  };
-
-  changeActiveItem = activeItemIndex => this.setState({ activeItemIndex });
 
   importAll(r) {
     let images = {};
@@ -66,10 +42,8 @@ class Products extends Component {
 
     const kitchenFaucetData =
       this.state.data.length > 0 ? kitchenData.kitchen[0].faucet : null;
-    const kitchenSinkData = 
+    const kitchenSinkData =
       this.state.data.length > 0 ? kitchenData.kitchen[0].sink : null;
-
-    const { activeItemIndex } = this.state;
 
     // const imgs_bathtub = this.importAll(
     //   require.context(
@@ -87,14 +61,19 @@ class Products extends Component {
       )
     );
 
-    const kitchenFaucetmageCollection = Object.keys(kitchenFaucetImages).map(key => ({
-      imageFileName: key,
-      path: kitchenFaucetImages[key]
-    }));
+    const kitchenFaucetmageCollection = Object.keys(kitchenFaucetImages).map(
+      key => ({
+        imageFileName: key,
+        path: kitchenFaucetImages[key]
+      })
+    );
 
     let kitchenFaucets = [];
     if (kitchenFaucetData) {
-      let mergeImagePathToImageData = (kitchenFaucetData, kitchenFaucetmageCollection) =>
+      let mergeImagePathToImageData = (
+        kitchenFaucetData,
+        kitchenFaucetmageCollection
+      ) =>
         kitchenFaucetmageCollection.map(itm => ({
           ...kitchenFaucetData.find(
             item => item.imageFileName === itm.imageFileName && item
@@ -119,139 +98,14 @@ class Products extends Component {
               </div>
             </ColStyled>
 
-            <ColStyled lg={12} md={12} sm={12}>
-              <div style={{ textAlign: "left" }}>
-                <h3>Bath Tubs</h3>
-              </div>
-            </ColStyled>
-            <ProductCardContainer height="auto">
-              <ColStyled
-                lg={12}
-                md={12}
-                sm={12}
-                padding="0 50px"
-                margintop="1rem"
-              >
-                <Carousel
-                  numberOfCards={this.state.cards}
-                  gutter={12}
-                  showSlither={false}
-                  firstAndLastGutter={false}
-                  freeScrolling={false}
-                  requestToChangeActive={this.changeActiveItem}
-                  activeItemIndex={activeItemIndex}
-                  activePosition={"center"}
-                  chevronWidth={99}
-                  rightChevron={
-                    <SliderButton outline color="dark" size="lg">
-                      {">"}
-                    </SliderButton>
-                  }
-                  leftChevron={
-                    <SliderButton outline color="dark" size="lg">
-                      {"<"}
-                    </SliderButton>
-                  }
-                  outsideChevron={true}
-                >
-                   {Object.keys(kitchenFaucets).map(i => (
-                    <ColStyled lg={4} md={4} sm={12} padding="10px 0">
-                      <CardLink href="www.google.com">
-                        <ProductCard>
-                          <RowStyled
-                            marginleft="0"
-                            marginright="0"
-                            margintop="0"
-                          >
-                            <ColStyled margintop="0">
-                              <img
-                                id="bathTubImgimage"
-                                src={kitchenFaucets[i].path}
-                                alt="Bath"
-                                border="0"
-                                style={{ width: "388px", height: "250px" }}
-                              />
-                            </ColStyled>
-                            <ColStyled
-                              lg={12}
-                              md={12}
-                              sm={12}
-                              marginbottom="1em"
-                            >
-                              Description of the product
-                            </ColStyled>
-                          </RowStyled>
-                        </ProductCard>
-                      </CardLink>
-                    </ColStyled>
-                  ))} 
-                </Carousel>
-              </ColStyled>
-            </ProductCardContainer>
+            {/* ------------------- Bath Tubs ------------------- */}
+            <ProductCategory category={"Bath Tubs"} />
+            <ProductSectionWithCarousel product={kitchenFaucets} />
 
             {/* ------------------- Faucets ------------------- */}
 
-            <ColStyled lg={12} md={12} sm={12}>
-              <div style={{ textAlign: "left" }}>
-                <h3>Faucets</h3>
-              </div>
-            </ColStyled>
-            <ProductCardContainer height="auto">
-              <ColStyled
-                lg={12}
-                md={12}
-                sm={12}
-                padding="0 50px"
-                margintop="1rem"
-              >
-                <Carousel
-                  numberOfCards={this.state.cards}
-                  gutter={12}
-                  showSlither={false}
-                  firstAndLastGutter={false}
-                  freeScrolling={false}
-                  requestToChangeActive={this.changeActiveItem}
-                  activeItemIndex={activeItemIndex}
-                  activePosition={"center"}
-                  chevronWidth={99}
-                  rightChevron={
-                    <SliderButton outline color="dark" size="lg">
-                      {">"}
-                    </SliderButton>
-                  }
-                  leftChevron={
-                    <SliderButton outline color="dark" size="lg">
-                      {"<"}
-                    </SliderButton>
-                  }
-                  outsideChevron={true}
-                >
-                  {/* {Object.keys(kitchenFaucetImages).map(i => 
-                    <ColStyled lg={4} md={4} sm={12} padding="10px 0">
-                      <ProductCard>
-                        <RowStyled marginleft="0" marginright="0" margintop="0">
-                          <ColStyled margintop="0">
-                            <img
-                              id="bathTubImgimage"
-                              src={kitchenFaucetImages[i]}
-                              alt="Bath"
-                              border="0"
-                              style={{ width: "388px", height: "250px" }}
-                            />
-                          </ColStyled>
-                          <ColStyled lg={12} md={12} sm={12}>
-                            Description of the product
-                          </ColStyled>
-                        </RowStyled>
-                      </ProductCard>
-                    </ColStyled> */}
-                  )}
-                </Carousel>
-                {/* </RowStyled> */}
-
-                {/* </RowStyled> */}
-              </ColStyled>
-            </ProductCardContainer>
+            <ProductCategory category={"Faucets"} />
+            <ProductSectionWithCarousel product={kitchenFaucets} />
 
             <ColStyled lg={12} md={12} sm={12}>
               <RowStyled marginleft="0">

@@ -18,7 +18,7 @@ export function getElementsPerScreen() {
       ? (showCards = constant.size.sm)
       : window.innerWidth <= 1399
       ? (showCards = constant.size.md)
-      : window.innerWidth <= 1699
+      : window.innerWidth <= 1799
       ? (showCards = constant.size.lg)
       : (showCards = constant.size.xl);
     return showCards;
