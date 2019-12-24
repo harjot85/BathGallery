@@ -4,7 +4,6 @@ import {
   ColStyled,
   ProductCardContainer,
   ProductCard,
-  CardLink,
   Section
 } from "../../components/sharedStyledComponents/index";
 
@@ -40,18 +39,21 @@ class Products extends Component {
     const bathroomData = this.state.data[0];
     const kitchenData = this.state.data[1];
 
+    const bathTubsData =
+      this.state.data.length > 0 ? bathroomData.bathroom[2].bathTub : null;
+
     const kitchenFaucetData =
       this.state.data.length > 0 ? kitchenData.kitchen[0].faucet : null;
     const kitchenSinkData =
       this.state.data.length > 0 ? kitchenData.kitchen[0].sink : null;
 
-    // const imgs_bathtub = this.importAll(
-    //   require.context(
-    //     "../../images/products/bathroom/bathtub",
-    //     false,
-    //     /\.(png|jpe?g)$/
-    //   )
-    // );
+    const imgs_bathtub = this.importAll(
+      require.context(
+        "../../Assets/images/products/bathroom/bathtub",
+        false,
+        /\.(png|jpe?g)$/
+      )
+    );
 
     const kitchenFaucetImages = this.importAll(
       require.context(
@@ -68,8 +70,16 @@ class Products extends Component {
       })
     );
 
+    const bathTubmageCollection = Object.keys(imgs_bathtub).map(
+      key => ({
+        imageFileName: key,
+        path: imgs_bathtub[key]
+      })
+    );
+
+    let bathTubs = [];
     let kitchenFaucets = [];
-    if (kitchenFaucetData) {
+    if (kitchenFaucetData && bathTubsData) {
       let mergeImagePathToImageData = (
         kitchenFaucetData,
         kitchenFaucetmageCollection
@@ -85,6 +95,11 @@ class Products extends Component {
         kitchenFaucetData,
         kitchenFaucetmageCollection
       );
+
+      bathTubs = mergeImagePathToImageData(
+        bathTubsData, 
+        bathTubmageCollection
+      )
     }
 
     return (
@@ -100,7 +115,7 @@ class Products extends Component {
 
             {/* ------------------- Bath Tubs ------------------- */}
             <ProductCategory category={"Bath Tubs"} />
-            <ProductSectionWithCarousel product={kitchenFaucets} />
+            <ProductSectionWithCarousel product={bathTubs} />
 
             {/* ------------------- Faucets ------------------- */}
 

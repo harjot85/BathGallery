@@ -39,11 +39,9 @@ export default class ProductSectionWithCarousel extends Component {
   changeActiveItem = activeItemIndex => this.setState({ activeItemIndex });
 
   render() {
-    console.log(this.props);
     const { activeItemIndex } = this.state;
     const { product } = this.props;
 
-    console.log(this.state.cards);
     return (
       <ProductCardContainer height="auto">
         <ColStyled lg={12} md={12} sm={12} padding="0 50px" margintop="1rem">

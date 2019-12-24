@@ -36,7 +36,55 @@
             "description": ""
           }
         ]
+      },
+      {
+        "bathTub": [
+          {
+            "id": "3001",
+            "imageFileName": "CLAW_FOOT_TUB.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "3002",
+            "imageFileName": "CORNER_TUB.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "3003",
+            "imageFileName": "DROP_IN_BATH_TUB.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "3004",
+            "imageFileName": "FREESTANDING_TUB.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "3005",
+            "imageFileName": "SKIRTED_TUB.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "3006",
+            "imageFileName": "WALK_IN_BATH_TUB.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          }
+        ]
       }
+
+
     ]
   },
 
