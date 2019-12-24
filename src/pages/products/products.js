@@ -64,10 +64,13 @@ class Products extends Component {
     const bathroomData = this.state.data[0];
     const kitchenData = this.state.data[1];
 
-    const faucet =
+    const kitchenFaucetData =
       this.state.data.length > 0 ? kitchenData.kitchen[0].faucet : null;
+    const kitchenSinkData = 
+      this.state.data.length > 0 ? kitchenData.kitchen[0].sink : null;
 
     const { activeItemIndex } = this.state;
+
     // const imgs_bathtub = this.importAll(
     //   require.context(
     //     "../../images/products/bathroom/bathtub",
@@ -76,7 +79,7 @@ class Products extends Component {
     //   )
     // );
 
-    const imgs_faucet = this.importAll(
+    const kitchenFaucetImages = this.importAll(
       require.context(
         "../../Assets/images/products/kitchen/Faucet",
         false,
@@ -84,27 +87,26 @@ class Products extends Component {
       )
     );
 
-    const kitchenFaucetmageCollection = Object.keys(imgs_faucet).map(key => ({
+    const kitchenFaucetmageCollection = Object.keys(kitchenFaucetImages).map(key => ({
       imageFileName: key,
-      path: imgs_faucet[key]
+      path: kitchenFaucetImages[key]
     }));
 
     let kitchenFaucets = [];
-    if (faucet) {
-      let getKitchenFaucetsWithImages = (faucet, kitchenFaucetmageCollection) =>
+    if (kitchenFaucetData) {
+      let mergeImagePathToImageData = (kitchenFaucetData, kitchenFaucetmageCollection) =>
         kitchenFaucetmageCollection.map(itm => ({
-          ...faucet.find(
+          ...kitchenFaucetData.find(
             item => item.imageFileName === itm.imageFileName && item
           ),
           ...itm
         }));
 
-      kitchenFaucets = getKitchenFaucetsWithImages(
-        faucet,
+      kitchenFaucets = mergeImagePathToImageData(
+        kitchenFaucetData,
         kitchenFaucetmageCollection
       );
     }
-    console.log(kitchenFaucets);
 
     return (
       <>
@@ -224,14 +226,14 @@ class Products extends Component {
                   }
                   outsideChevron={true}
                 >
-                  {/* {Object.keys(imgs_faucet).map(i => 
+                  {/* {Object.keys(kitchenFaucetImages).map(i => 
                     <ColStyled lg={4} md={4} sm={12} padding="10px 0">
                       <ProductCard>
                         <RowStyled marginleft="0" marginright="0" margintop="0">
                           <ColStyled margintop="0">
                             <img
                               id="bathTubImgimage"
-                              src={imgs_faucet[i]}
+                              src={kitchenFaucetImages[i]}
                               alt="Bath"
                               border="0"
                               style={{ width: "388px", height: "250px" }}
