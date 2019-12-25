@@ -36,16 +36,45 @@ class Products extends Component {
   }
 
   render() {
+    console.log(this.state.data);
     const bathroomData = this.state.data[0];
     const kitchenData = this.state.data[1];
+    const accessoriesData = this.state.data[2];
 
-    const bathTubsData =
-      this.state.data.length > 0 ? bathroomData.bathroom[2].bathTub : null;
+    const bathroomData_basin =
+      this.state.data.length > 0 ? bathroomData.bathroom[0].basin : null;
+    const bathroomData_bathTub =
+      this.state.data.length > 0 ? bathroomData.bathroom[1].bathTub : null;
+    const bathroomData_faucet =
+      this.state.data.length > 0 ? bathroomData.bathroom[2].faucet : null;
+    const bathroomData_furniture =
+      this.state.data.length > 0
+        ? bathroomData.bathroom[3].bathFurniture
+        : null;
+    const bathroomData_shower =
+      this.state.data.length > 0 ? bathroomData.bathroom[4].shower : null;
+    const bathroomData_showerBase =
+      this.state.data.length > 0 ? bathroomData.bathroom[5].showerBase : null;
+    const bathroomData_showerDoor =
+      this.state.data.length > 0 ? bathroomData.bathroom[6].showerDoor : null;
+    const bathroomData_toilet =
+      this.state.data.length > 0 ? bathroomData.bathroom[7].toilet : null;
 
-    const kitchenFaucetData =
+    const kitchenData_faucet =
       this.state.data.length > 0 ? kitchenData.kitchen[0].faucet : null;
-    const kitchenSinkData =
-      this.state.data.length > 0 ? kitchenData.kitchen[0].sink : null;
+    const kitchenData_sink =
+      this.state.data.length > 0 ? kitchenData.kitchen[1].sink : null;
+
+    const accessoriesData_all =
+      this.state.data.length > 0 ? accessoriesData.accessories[0].all : null;
+
+    const imgs_basin = this.importAll(
+      require.context(
+        "../../Assets/images/products/bathroom/basin",
+        false,
+        /\.(png|jpe?g)$/
+      )
+    );
 
     const imgs_bathtub = this.importAll(
       require.context(
@@ -55,51 +84,187 @@ class Products extends Component {
       )
     );
 
-    const kitchenFaucetImages = this.importAll(
+    const imgs_bathroom_faucet = this.importAll(
       require.context(
-        "../../Assets/images/products/kitchen/Faucet",
+        "../../Assets/images/products/bathroom/faucet",
         false,
         /\.(png|jpe?g)$/
       )
     );
 
-    const kitchenFaucetmageCollection = Object.keys(kitchenFaucetImages).map(
-      key => ({
-        imageFileName: key,
-        path: kitchenFaucetImages[key]
-      })
+    const imgs_furniture = this.importAll(
+      require.context(
+        "../../Assets/images/products/bathroom/furniture",
+        false,
+        /\.(png|jpe?g)$/
+      )
     );
 
-    const bathTubmageCollection = Object.keys(imgs_bathtub).map(
-      key => ({
-        imageFileName: key,
-        path: imgs_bathtub[key]
-      })
+    const imgs_shower = this.importAll(
+      require.context(
+        "../../Assets/images/products/bathroom/shower",
+        false,
+        /\.(png|jpe?g)$/
+      )
     );
 
+    const imgs_showerBase = this.importAll(
+      require.context(
+        "../../Assets/images/products/bathroom/showerBase",
+        false,
+        /\.(png|jpe?g)$/
+      )
+    );
+
+    const imgs_showerDoor = this.importAll(
+      require.context(
+        "../../Assets/images/products/bathroom/showerDoor",
+        false,
+        /\.(png|jpe?g)$/
+      )
+    );
+
+    const imgs_toilet = this.importAll(
+      require.context(
+        "../../Assets/images/products/bathroom/toilet",
+        false,
+        /\.(png|jpe?g)$/
+      )
+    );
+
+    const imgs_kitchen_faucet = this.importAll(
+      require.context(
+        "../../Assets/images/products/kitchen/faucet",
+        false,
+        /\.(png|jpe?g)$/
+      )
+    );
+
+    const imgs_kitchen_sink = this.importAll(
+      require.context(
+        "../../Assets/images/products/kitchen/sink",
+        false,
+        /\.(png|jpe?g)$/
+      )
+    );
+
+    const imgs_accessories = this.importAll(
+      require.context(
+        "../../Assets/images/products/accessories",
+        false,
+        /\.(png|jpe?g)$/
+      )
+    );
+
+    const basinImages = Object.keys(imgs_basin).map(key => ({
+      imageFileName: key,
+      path: imgs_basin[key]
+    }));
+    const bathTubImages = Object.keys(imgs_bathtub).map(key => ({
+      imageFileName: key,
+      path: imgs_bathtub[key]
+    }));
+    const bathroomFaucetImages = Object.keys(imgs_bathroom_faucet).map(key => ({
+      imageFileName: key,
+      path: imgs_bathroom_faucet[key]
+    }));
+    const furnitureImages = Object.keys(imgs_furniture).map(key => ({
+      imageFileName: key,
+      path: imgs_furniture[key]
+    }));
+    const showerImages = Object.keys(imgs_shower).map(key => ({
+      imageFileName: key,
+      path: imgs_shower[key]
+    }));
+    const showerBaseImages = Object.keys(imgs_showerBase).map(key => ({
+      imageFileName: key,
+      path: imgs_showerBase[key]
+    }));
+    const showerDoorImages = Object.keys(imgs_showerDoor).map(key => ({
+      imageFileName: key,
+      path: imgs_showerDoor[key]
+    }));
+    const toiletImages = Object.keys(imgs_toilet).map(key => ({
+      imageFileName: key,
+      path: imgs_toilet[key]
+    }));
+
+    const kitchenFaucetImages = Object.keys(imgs_kitchen_faucet).map(key => ({
+      imageFileName: key,
+      path: imgs_kitchen_faucet[key]
+    }));
+
+    const kitchenSinkImages = Object.keys(imgs_kitchen_sink).map(key => ({
+      imageFileName: key,
+      path: imgs_kitchen_sink[key]
+    }));
+
+    const accessoriesImages = Object.keys(imgs_accessories).map(key => ({
+      imageFileName: key,
+      path: imgs_accessories[key]
+    }));
+
+    let basins = [];
     let bathTubs = [];
+    let faucets = [];
+    let furniture = [];
+    let showers = [];
+    let showerBases = [];
+    let showerDoors = [];
+    let toilets = [];
+
     let kitchenFaucets = [];
-    if (kitchenFaucetData && bathTubsData) {
+    let kitchenSinks = [];
+
+    let accessories = [];
+
+    if (bathroomData_basin && bathroomData_bathTub && kitchenData_faucet) {
       let mergeImagePathToImageData = (
-        kitchenFaucetData,
-        kitchenFaucetmageCollection
+        kitchenData_faucet,
+        kitchenFaucetImages
       ) =>
-        kitchenFaucetmageCollection.map(itm => ({
-          ...kitchenFaucetData.find(
+        kitchenFaucetImages.map(itm => ({
+          ...kitchenData_faucet.find(
             item => item.imageFileName === itm.imageFileName && item
           ),
           ...itm
         }));
 
+      basins = mergeImagePathToImageData(bathroomData_basin, basinImages);
+      bathTubs = mergeImagePathToImageData(bathroomData_bathTub, bathTubImages);
+      faucets = mergeImagePathToImageData(
+        bathroomData_faucet,
+        bathroomFaucetImages
+      );
+      furniture = mergeImagePathToImageData(
+        bathroomData_furniture,
+        furnitureImages
+      );
+      showers = mergeImagePathToImageData(bathroomData_shower, showerImages);
+      showerBases = mergeImagePathToImageData(
+        bathroomData_showerBase,
+        showerBaseImages
+      );
+      showerDoors = mergeImagePathToImageData(
+        bathroomData_showerDoor,
+        showerDoorImages
+      );
+      toilets = mergeImagePathToImageData(bathroomData_toilet, toiletImages);
+
       kitchenFaucets = mergeImagePathToImageData(
-        kitchenFaucetData,
-        kitchenFaucetmageCollection
+        kitchenData_faucet,
+        kitchenFaucetImages
       );
 
-      bathTubs = mergeImagePathToImageData(
-        bathTubsData, 
-        bathTubmageCollection
-      )
+      kitchenSinks = mergeImagePathToImageData(
+        kitchenData_sink,
+        kitchenSinkImages
+      );
+
+      accessories = mergeImagePathToImageData(
+        accessoriesData_all,
+        accessoriesImages
+      );
     }
 
     return (
@@ -113,57 +278,56 @@ class Products extends Component {
               </div>
             </ColStyled>
 
-            {/* ------------------- Bath Tubs ------------------- */}
+            <ProductCategory category={"Basins"} />
+            <ProductSectionWithCarousel product={basins} />
+
             <ProductCategory category={"Bath Tubs"} />
             <ProductSectionWithCarousel product={bathTubs} />
 
-            {/* ------------------- Faucets ------------------- */}
+            <ProductCategory category={"Faucets"} />
+            <ProductSectionWithCarousel product={faucets} />
+
+            <ProductCategory category={"Furniture"} />
+            <ProductSectionWithCarousel product={furniture} />
+
+            <ProductCategory category={"Shower"} />
+            <ProductSectionWithCarousel product={showers} />
+
+            <ProductCategory category={"Shower Base"} />
+            <ProductSectionWithCarousel product={showerBases} />
+
+            <ProductCategory category={"Shower Door"} />
+            <ProductSectionWithCarousel product={showerDoors} />
+
+            <ProductCategory category={"Toilets"} />
+            <ProductSectionWithCarousel product={toilets} />
+
+            {/* ------------------- Kitchen ------------------- */}
+
+            <ColStyled lg={12} md={12} sm={12}>
+              <div style={{ textAlign: "left" }}>
+                <h1>Kitchen</h1>
+                <hr />
+              </div>
+            </ColStyled>
 
             <ProductCategory category={"Faucets"} />
             <ProductSectionWithCarousel product={kitchenFaucets} />
 
-            <ColStyled lg={12} md={12} sm={12}>
-              <RowStyled marginleft="0">
-                <h5>Kitchen</h5>
-              </RowStyled>
-              <RowStyled marginleft="0">
-                <ProductCardContainer height="auto">
-                  <RowStyled marginbottom="2em">
-                    <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
-                    </ColStyled>
+            <ProductCategory category={"Sinks"} />
+            <ProductSectionWithCarousel product={kitchenSinks} />
 
-                    <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
-                    </ColStyled>
-
-                    <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
-                    </ColStyled>
-
-                    <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
-                    </ColStyled>
-
-                    <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
-                    </ColStyled>
-
-                    <ColStyled lg={4} md={4} sm={12}>
-                      <ProductCard />
-                    </ColStyled>
-                  </RowStyled>
-                </ProductCardContainer>
-              </RowStyled>
-            </ColStyled>
+            {/* ------------------- Kitchen ------------------- */}
 
             <ColStyled lg={12} md={12} sm={12}>
-              <RowStyled marginleft="0">
-                <h5>Accessories</h5>
-              </RowStyled>
-
-              <ProductCardContainer></ProductCardContainer>
+              <div style={{ textAlign: "left" }}>
+                <h1>Accessories</h1>
+                <hr />
+              </div>
             </ColStyled>
+
+            <ProductCategory category={"All"} />
+            <ProductSectionWithCarousel product={accessories} />
           </RowStyled>
         </Section>
 

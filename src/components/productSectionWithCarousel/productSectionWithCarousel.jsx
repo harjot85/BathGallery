@@ -82,7 +82,7 @@ export default class ProductSectionWithCarousel extends Component {
                         />
                       </ColStyled>
                       <ColStyled lg={12} md={12} sm={12} marginbottom="1em">
-                        Description of the product
+                        {product[i].description}
                       </ColStyled>
                     </RowStyled>
                   </ProductCard>

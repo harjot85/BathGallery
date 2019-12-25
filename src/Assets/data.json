@@ -21,8 +21,8 @@
             "id": "1003",
             "imageFileName": "GLASS_BASINS.jpg",
             "path": "",
-            "linkURL": "",
-            "description": ""
+            "linkURL": "https://aquabrass.com/en/p/bathroom/baths-basins/glass-basins/round-clear-sculptured-tempered-glass-basin/",
+            "description": "AQUABRASS"
           },
           {
             "id": "1004",
@@ -33,24 +33,7 @@
           }
         ]
       },
-      {
-        "bathFurniture": [
-          {
-            "id": "2001",
-            "imageFileName": "FLOOR_MOUNT.jpg",
-            "path": "",
-            "linkURL": "",
-            "description": ""
-          },
-          {
-            "id": "2002",
-            "imageFileName": "WALL_MOUNT.jpg",
-            "path": "",
-            "linkURL": "",
-            "description": ""
-          }
-        ]
-      },
+
       {
         "bathTub": [
           {
@@ -123,6 +106,24 @@
           {
             "id": "4004",
             "imageFileName": "WALL_MOUNT_FAUCET.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "bathFurniture": [
+          {
+            "id": "2001",
+            "imageFileName": "FLOOR_MOUNT.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "2002",
+            "imageFileName": "WALL_MOUNT.jpg",
             "path": "",
             "linkURL": "",
             "description": ""
