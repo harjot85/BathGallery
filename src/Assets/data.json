@@ -5,14 +5,28 @@
         "basin": [
           {
             "id": "1001",
+            "imageFileName": "DROP_IN_BASIN.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": "COMPANY NAME"
+          },
+          {
+            "id": "1002",
             "imageFileName": "DROP_IN_BASIN_2.jpg",
             "path": "",
             "linkURL": "",
             "description": ""
           },
           {
-            "id": "1002",
-            "imageFileName": "DROP_IN_BASIN.jpg",
+            "id": "1003",
+            "imageFileName": "GLASS_BASINS.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "1004",
+            "imageFileName": "UNDERMOUNT.jpg",
             "path": "",
             "linkURL": "",
             "description": ""
@@ -82,9 +96,139 @@
             "description": ""
           }
         ]
+      },
+      {
+        "faucet": [
+          {
+            "id": "4001",
+            "imageFileName": "3_HOLE_FAUCET.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "4002",
+            "imageFileName": "FREESTANDING_FAUCET.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "4003",
+            "imageFileName": "SINGLE_HOLE_FAUCET.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "4004",
+            "imageFileName": "WALL_MOUNT_FAUCET.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "shower": [
+          {
+            "id": "5001",
+            "imageFileName": "SHOWER_KIT.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "5002",
+            "imageFileName": "SHOWER_PANEL.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "showerBase": [
+          {
+            "id": "6001",
+            "imageFileName": "LINEAR_SHOWER_BASE.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "6002",
+            "imageFileName": "NEO_ANGLE.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "6003",
+            "imageFileName": "NEO_ROUND.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "6004",
+            "imageFileName": "SHOWER_BASE_CENTRE_DRAIN.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "6005",
+            "imageFileName": "SHOWER_BASE_WITH_SEAT.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "showerDoor": [
+          {
+            "id": "7001",
+            "imageFileName": "BATHTUBE_SHIELD.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "7002",
+            "imageFileName": "SHOWER_DOOR.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "7003",
+            "imageFileName": "TUB_DOOR.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "toilet": [
+          {
+            "id": "8001",
+            "imageFileName": "ONE_PIECE_TOILET.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "8002",
+            "imageFileName": "TWO_PIECE_TOILET.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          }
+        ]
       }
-
-
     ]
   },
 
@@ -151,6 +295,42 @@
             "path": "",
             "linkURL": "",
             "description": "UNDERMOUNT.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "accessories": [
+      {
+        "all": [
+          {
+            "id": "1001",
+            "imageFileName": "BATH_HARDWARE.png",
+            "path": "",
+            "linkURL": "",
+            "description": "Description YO"
+          },
+          {
+            "id": "1002",
+            "imageFileName": "BATH_SAFETY.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "1003",
+            "imageFileName": "GARBURATOR.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
+          },
+          {
+            "id": "1004",
+            "imageFileName": "WASTE_DISPOSAL_BIN.jpg",
+            "path": "",
+            "linkURL": "",
+            "description": ""
           }
         ]
       }
