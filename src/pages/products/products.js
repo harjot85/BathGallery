@@ -132,7 +132,7 @@ class Products extends Component {
 
     const imgs_kitchen_faucet = this.importAll(
       require.context(
-        "../../Assets/images/products/kitchen/faucet",
+        "../../Assets/images/products/kitchen/Faucet",
         false,
         /\.(png|jpe?g)$/
       )
@@ -140,7 +140,7 @@ class Products extends Component {
 
     const imgs_kitchen_sink = this.importAll(
       require.context(
-        "../../Assets/images/products/kitchen/sink",
+        "../../Assets/images/products/kitchen/Sink",
         false,
         /\.(png|jpe?g)$/
       )
