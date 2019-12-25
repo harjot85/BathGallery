@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import {
   RowStyled,
   ColStyled,
-  ProductCardContainer,
-  ProductCard,
   Section
 } from "../../components/sharedStyledComponents/index";
 
